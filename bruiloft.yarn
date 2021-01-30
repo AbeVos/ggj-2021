@@ -1,0 +1,43 @@
+title:X.greeting
+---
+X: ...?
+X: Look who it is!
+X: {$player_name}!
+X: I haven't seen you in ages!
+
+-> Hi... you!
+		X: It's been too long!
+-> Who are you again?
+		X: You always where a joker, {$player_name}!
+		X: Surely, you remember me!
+-> Hey... old friend!
+		X: It's so good to see you after all this time!
+-> *Just smile and wave*
+		X: What are the odds of running into you here?
+
+X: When was the last time we spoke?
+X: It must have been at that {$tag_wedding} some two years ago.
+X: You remember that, don't you?
+X: That was some plan, to do an outdoor {$tag_wedding} in the dead of winter.
+X: At least the reception was nice.
+X: Even despite the bride's best friend performing with their GENRE band.
+X: Wasn't a great fan of that.
+X: Also, I was not sold on the {$tag_cake}.
+X: It had a very strange taste to it.
+X: Like it had been drenched into something.
+X: Very strange..
+X: Anyway, surely you remember that day?
+
+-> Sure I do, Adela and Billie looked so happy that night!
+	<<change_mood 1>>
+-> Sure I do, Davy and Elliott looked so happy together!
+	<<change_mood -1>>
+	X: ...
+	X: I'm not quite sure we are talking about the same wedding.
+	X: It as Adela and Billie's wedding!
+	Player: Of course..
+	X: Don't worry, happens to the best of us.
+-> Of course I do! That was quite a... wedding wasn't it?
+	<<change_mood 0>>
+	X: Yeah, it sure was!
+===
