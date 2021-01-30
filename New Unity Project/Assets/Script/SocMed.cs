@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [System.Serializable]
 public class Message
@@ -17,7 +18,7 @@ public class Post
     public string author;
     public string text;
     public List<string> tags;
-    // public Message[] replies;
+    public Message[] replies;
 }
 
 [System.Serializable]
@@ -29,6 +30,8 @@ public class PostContainer
 public class SocMed : MonoBehaviour
 {
     public GameObject PostPrefab;
+    public GameObject ReplyPrefab;
+    private string _postFilter;
 
     void Start()
     {
@@ -41,27 +44,38 @@ public class SocMed : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+
+    }
+
     void InstantiatePost(Post post)
     {
         var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
         var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
-        var tagsField = PostPrefab.GetComponent<PostItem>().TagsField;
 
-        authorField.GetComponent<Text>().text = post.author;
-        bodyField.GetComponent<Text>().text = post.text;
-        tagsField.GetComponent<Text>().text = TagsToString(post.tags);
+        authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
+        bodyField.GetComponent<TextMeshProUGUI>().SetText(post.text);
 
         var prefab = Instantiate(PostPrefab, gameObject.transform);
         prefab.transform.parent = gameObject.transform;
+
+        foreach (var reply in post.replies)
+        {
+            //InstantiateReply(reply, prefab);
+        }
     }
 
-    string TagsToString(List<string> tags)
+    void InstantiateReply(Message reply, GameObject parent)
     {
-        var tagsText = "";
-        foreach (var tag in tags)
-        {
-            tagsText = $"{tagsText} #{tag}";
-        }
-        return tagsText;
+        var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
+        var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
+
+        authorField.GetComponent<Text>().text = $"{reply.author} - {reply.date}";
+        bodyField.GetComponent<Text>().text = reply.text;
+
+        var prefab = Instantiate(ReplyPrefab, parent.transform);
+        prefab.transform.parent = parent.transform;
+
     }
 }
