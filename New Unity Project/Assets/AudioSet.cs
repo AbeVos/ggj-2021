@@ -24,7 +24,7 @@ public class AudioSet : MonoBehaviour
     public Dictionary<string, AudioSource> sources;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         sources = new Dictionary<string, AudioSource>();
 
