@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Message
@@ -28,26 +28,24 @@ public class PostContainer
 
 public class SocMed : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject PostPrefab;
+
     void Start()
     {
-        for (int i = 0; i < 10; i++)
-        {
-
-        }
-
         TextAsset posts_json = Resources.Load<TextAsset>("posts");
         PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
         foreach (Post post in container.posts)
         {
-            Debug.Log(post.text);
+            InstantiatePost(post);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void InstantiatePost(Post post)
     {
-
+        Debug.Log(post.text);
+        PostPrefab.GetComponentInChildren<Text>().text = post.text;
+        var prefab = Instantiate(PostPrefab, gameObject.transform);
+        prefab.transform.parent = gameObject.transform;
     }
 }
