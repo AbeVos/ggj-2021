@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 [System.Serializable]
 public class Message
@@ -32,21 +34,19 @@ public class SocMed : MonoBehaviour
     public GameObject PostPrefab;
     public GameObject ReplyPrefab;
     private string _postFilter;
+    private List<string> _tags;
 
     void Start()
     {
         TextAsset posts_json = Resources.Load<TextAsset>("posts");
         PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
+        _tags = container.posts.SelectMany(x => x.tags).ToList();
+
         foreach (Post post in container.posts)
         {
             InstantiatePost(post);
         }
-    }
-
-    private void Update()
-    {
-
     }
 
     void InstantiatePost(Post post)
@@ -55,7 +55,9 @@ public class SocMed : MonoBehaviour
         var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
 
         authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
-        bodyField.GetComponent<TextMeshProUGUI>().SetText(post.text);
+
+        var bodyText = ReplaceTagsForLinks(post.text);
+        bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
 
         var prefab = Instantiate(PostPrefab, gameObject.transform);
         prefab.transform.parent = gameObject.transform;
@@ -64,6 +66,26 @@ public class SocMed : MonoBehaviour
         {
             //InstantiateReply(reply, prefab);
         }
+    }
+
+    string ReplaceTagsForLinks(string text)
+    {
+        var punctuation = text.Where(char.IsPunctuation).Distinct().ToArray();
+        var words = text.Split().Select(x => x.Trim(punctuation)).ToList();
+        var output = new List<string>();
+
+        foreach(var word in words)
+        {
+            if (_tags.Contains(word))
+            {
+                output.Add($"<link={word}>{word}</link>");
+            }
+            else
+            {
+                output.Add(word);
+            }
+        }
+        return string.Join(" ", output);
     }
 
     void InstantiateReply(Message reply, GameObject parent)
