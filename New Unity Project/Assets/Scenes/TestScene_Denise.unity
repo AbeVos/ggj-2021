@@ -487,11 +487,19 @@ PrefabInstance:
     - target: {fileID: 8741357927030165745, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
       propertyPath: PostPrefab
       value: 
-      objectReference: {fileID: 7495374561732386824, guid: 2d954f0cdb1bccb49b104718fa9c9234, type: 3}
+      objectReference: {fileID: 7495374561732386824, guid: 959971939f3332a42924b6deccfa6d33, type: 3}
+    - target: {fileID: 8741357927030165745, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
+      propertyPath: ReplyPrefab
+      value: 
+      objectReference: {fileID: 1188463617585458544, guid: 0b7add209cd6e7141ae21aa9f1f30baf, type: 3}
     - target: {fileID: 8741357927061795832, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 4527639e8dd14864f96bf3d1a09a6506, type: 3}
+    - target: {fileID: 8741357927297957273, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8741357927681323934, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
       propertyPath: m_Name
       value: Phone
@@ -550,6 +558,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8741357928200654830, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741357928200654830, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8741357928429625616, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
