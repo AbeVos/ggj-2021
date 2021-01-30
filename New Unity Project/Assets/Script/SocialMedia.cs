@@ -28,7 +28,7 @@ public class PostContainer
     public Post[] posts;
 }
 
-public class SocMed : MonoBehaviour
+public class SocialMedia : MonoBehaviour
 {
     public GameObject PostPrefab;
     public GameObject ReplyPrefab;
