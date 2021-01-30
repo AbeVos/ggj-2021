@@ -1,0 +1,51 @@
+fileFormatVersion: 2
+guid: 69e8b1c6c6db5f0468afd93b84d940d0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - bruiloft-X.greeting-0
+  - bruiloft-X.greeting-1
+  - bruiloft-X.greeting-2
+  - bruiloft-X.greeting-3
+  - bruiloft-X.greeting-4
+  - bruiloft-X.greeting-5
+  - bruiloft-X.greeting-6
+  - bruiloft-X.greeting-7
+  - bruiloft-X.greeting-8
+  - bruiloft-X.greeting-9
+  - bruiloft-X.greeting-10
+  - bruiloft-X.greeting-11
+  - bruiloft-X.greeting-12
+  - bruiloft-X.greeting-13
+  - bruiloft-X.greeting-14
+  - bruiloft-X.greeting-15
+  - bruiloft-X.greeting-16
+  - bruiloft-X.greeting-17
+  - bruiloft-X.greeting-18
+  - bruiloft-X.greeting-19
+  - bruiloft-X.greeting-20
+  - bruiloft-X.greeting-21
+  - bruiloft-X.greeting-22
+  - bruiloft-X.greeting-23
+  - bruiloft-X.greeting-24
+  - bruiloft-X.greeting-25
+  - bruiloft-X.greeting-26
+  - bruiloft-X.greeting-27
+  - bruiloft-X.greeting-28
+  - bruiloft-X.greeting-29
+  - bruiloft-X.greeting-30
+  - bruiloft-X.greeting-31
+  - bruiloft-X.greeting-32
+  - bruiloft-X.greeting-33
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []
