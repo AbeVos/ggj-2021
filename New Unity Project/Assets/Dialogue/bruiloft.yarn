@@ -1,21 +1,29 @@
-title: X
+title: introduction
 tags:
 ---
+<<set emotion to "neutral">>
 X: ...?
+<<set emotion to "happy">>
 X: Look who it is!
 X: {$player_name}!
 X: I haven't seen you in ages!
 
 -> Hi... you!
-		X: It's been too long!
+	X: It's been too long!
 -> Who are you again?
-		X: You always where a joker, {$player_name}!
-		X: Surely, you remember me!
+	X: You always where a joker, {$player_name}!
+	X: Surely, you remember me!
 -> Hey... old friend!
-		X: It's so good to see you after all this time!
+	X: It's so good to see you after all this time!
 -> *Just smile and wave*
-		X: What are the odds of running into you here?
+	X: What are the odds of running into you here?
+[[wedding]]
+===
 
+title: wedding
+tags
+---
+<<set emotion to "neutral">>
 X: When was the last time we spoke?
 X: It must have been at that {$tag_wedding} some two years ago.
 X: You remember that, don't you?
@@ -25,20 +33,84 @@ X: Even despite the bride's best friend performing with their GENRE band.
 X: Wasn't a great fan of that.
 X: Also, I was not sold on the {$tag_cake}.
 X: It had a very strange taste to it.
+<<set emotion to "sad">>
 X: Like it had been drenched into something.
 X: Very strange..
+<<set emotion to "neutral">>
 X: Anyway, surely you remember that day?
 
 -> Sure I do, Adela and Billie looked so happy that night!
 	<<change_mood 1>>
+	<<set emotion to "happy">>
+	X: So you DO remember!
 -> Sure I do, Davy and Elliott looked so happy together!
 	<<change_mood -1>>
+	<<set emotion to "sad">>
 	X: ...
 	X: I'm not quite sure we are talking about the same wedding.
-	X: It as Adela and Billie's wedding!
-	Player: Of course..
+	X: It was Adela and Billie's wedding!
+	Player: Of course...
 	X: Don't worry, happens to the best of us.
 -> Of course I do! That was quite a... wedding wasn't it?
 	<<change_mood 0>>
-	X: Yeah, it sure was!
+	<<set emotion to "neutral">>
+	X: Yeah...
+	X: I guess it was.
+
+[[concert]]
+===
+
+title: concert
+tags:
+---
+<<set emotion to "neutral">>
+X: Anyway..
+X: Didn't that happen in the same year as my first {$token_concert}?
+X: Well, not really my first of course.
+<<set emotion to "sad">>
+X: But the first since after the {$token_incident}.
+<<set emotion to "neutral">>
+X: I was pretty anxious about it.
+X: It wasn't easy, given the situation with my arm.
+<<set emotion to "sad">>
+X: Of course, it didn't help my self-confidence that no one else showed up.
+<<set emotion to "neutral">>
+X: It happens, I suppose.
+X: What can you do, right?
+<<set emotion to "happy">>
+X: It didn't really matter anyway, since you where there, weren't you?
+
+-> Absolutely! You where... Making music... And it was great!
+	<<set emotion to "sad">>
+	X: Yeah...
+	<<set emotion to "neutral">>
+	X: It was great.
+-> Yes, you where great playing your trombone. A beautiful rendition of Beethoven.
+	X: Yes!
+	X: That was a great time.
+	X: It really meant a lot to me for you to be there.
+	X: After everything that happened between us.
+-> Playing GENRE on your trombone was a masterful stroke!
+	<<set emotion to "neutral">>
+	X: What?
+	X: I don't even like GENRE!
+	<<set emotion to "sad">>
+	X: I guess you weren't there after all...
+	X: That's fine.
+-> Very clever how you used your INSTRUMENT to play GENRE.
+	X: That's not right at all!
+	<<set emotion to "sad">>
+	X: I guess you weren't there after all...
+	X: That's okay.
+
+[[incident]]
+===
+
+title: incident
+tags:
+---
+I guess we haven't been seeing much of each other after that.
+Of course, it has been a difficult time for all of us after the {$token_incident}.
+Can you believe it has been SOME years?
+===
 ===
