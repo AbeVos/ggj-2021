@@ -476,6 +476,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8741357926905048231, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 59415f64ee2d53948a309a0b0bab56e4, type: 3}
     - target: {fileID: 8741357927030165744, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -484,6 +488,10 @@ PrefabInstance:
       propertyPath: PostPrefab
       value: 
       objectReference: {fileID: 7495374561732386824, guid: 2d954f0cdb1bccb49b104718fa9c9234, type: 3}
+    - target: {fileID: 8741357927061795832, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4527639e8dd14864f96bf3d1a09a6506, type: 3}
     - target: {fileID: 8741357927681323934, guid: 1362c0b1ce29f2b47842a2ab9a353ca5, type: 3}
       propertyPath: m_Name
       value: Phone
