@@ -1,0 +1,24 @@
+{
+	"posts": [
+		{
+			"date": "15 january 2018",
+			"author": "C",
+			"text": "Dit is een test bericht over koetjes en kalfjes.",
+			"tags": ["koetjes", "kalfjes"],
+			"replies": [
+				{
+					"date": "16 january 2018",
+					"author": "A",
+					"text": "Dit is mijn uitgebreide mening over koetjes en kalfjes.\n\n1/N"
+				}
+			]
+		},
+		{
+			"date": "15 january 2018",
+			"author": "B",
+			"text": "Dit omschrijf ik als controversieel, maar iedereen in mijn bubbel gaat het er toch wel mee eens zijn.",
+			"tags": ["meningen"],
+			"replies": []
+		}
+	]
+}
