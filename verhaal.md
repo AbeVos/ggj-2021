@@ -6,22 +6,22 @@ Dat doet me denken aan die keer {Gebeurtenis/locatie}.
 
 ### Kandidaten
 
-- A
+- Adela
   - Partner van B.
 	- Beste vrienden met C.
-- B
+- Billie
   - Partner van A.
-- C
+- Charlie
   - Beste vrienden met A.
 	- Muzikant/muziekliefhebber. 
-- D
-- E
-- F
-- G
-- H
-- I
-- J
-- K
+- Davy
+- Elliott
+- Finley
+- Gab
+- Harley
+- Indigo
+- Jaden
+- Kim
 
 ## De Bruiloft
 
