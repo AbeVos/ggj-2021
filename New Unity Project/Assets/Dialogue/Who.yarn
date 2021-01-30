@@ -1,0 +1,44 @@
+﻿title: Who
+tags:
+---
+Who: Hey Adela! Long time no see!
+[[Hey.... you...| Who.Dissapointed]]
+[[Hey! how are you?| Who.Normal]]
+[[* remain silent *| Who.Confused]]
+===
+
+title: Who.Dissapointed
+tags:
+---
+Who: You don't remember me??
+Player: Not.. really...
+Who: ...
+Who: I should go
+[[See you later.|Who.Exit]]
+===
+
+title: Who.Normal
+tags:
+---
+Who: So how is life?
+Who: Did Mitchell give you acces to the Jan Smit group yet?
+Who: I'm so happy to have you as a fiend
+[[See you later.|Who.Exit]]
+===
+
+title: Who.Confused
+tags:
+---
+Who: Adela? Are you ok? 
+Who: You seem a bit.. default-material today
+Player: Don't break the 4th wall >:( 
+Who: The what now?
+[[See you later.|Who.Exit]]
+===
+
+title: Who.Exit
+tags:
+---
+Who: I should go
+Who: Bye Adela!
+===

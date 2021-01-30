@@ -1,7 +1,59 @@
 {
 	"posts": [
 		{
-			"date": "15 january 2018",
+			"date": "15 January 2018",
+			"author": "Charlie",
+			"text": "My best friend Adela and Billie had such a beautiful ceremony, but we are all freezing out here so it's time for me to play some tunes and dance the night away to some GENRE.",
+			"tags": ["wedding"],
+			"replies": [
+				{
+					"date": "16 January 2018",
+					"author": "Finley",
+					"text": "I'm so sad I couldn't be there!"
+				},
+				{
+					"date": "16 January 2018",
+					"author": "Charlie",
+					"text": "Such a shame, I hope you'll get well soon!"
+				}
+			]
+		},
+		{
+			"date": "15 January 2018",
+			"author": "Charlie",
+			"text": "At Adela's reception. I think I just knocked over a full glass of beer over the wedding cake! Hoping no one saw...",
+			"tags": ["wedding", "cake"],
+			"replies": []
+		},
+		{
+			"date": "16 January 2018",
+			"author": "Davy",
+			"text": "Just got home from Billie and Adela's wedding. Great party, but the cake tasted awful.",
+			"tags": ["wedding", "cake"],
+			"replies": [
+				{
+					"date": "16 January 2018",
+					"author": "Elliott",
+					"text": "Yeah, I don't know what they put into that cake, but it wasn't a success"
+				}
+			]
+		},
+		{
+			"date": "12 December 2018",
+			"author": "Finley",
+			"text": "I just had the loveliest cake at Davy and Elliott's wedding reception",
+			"tags": ["wedding", "cake"],
+			"replies": []
+		},
+		{
+			"date": "21 June 2018",
+			"author": "Gab",
+			"text": "It's hot as balls at this wedding! Whose idea was it to do a ceremony in a poorly ventilated room in the middle of June!",
+			"tags": ["wedding"],
+			"replies": []
+		},
+		{
+			"date": "12 january 2018",
 			"author": "C",
 			"text": "Dit is een test bericht over koetjes en kalfjes.",
 			"tags": ["koetjes", "kalfjes"],
@@ -14,7 +66,7 @@
 			]
 		},
 		{
-			"date": "15 january 2018",
+			"date": "14 december 2018",
 			"author": "B",
 			"text": "Dit omschrijf ik als controversieel, maar iedereen in mijn bubbel gaat het er toch wel mee eens zijn.",
 			"tags": ["meningen"],
