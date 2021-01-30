@@ -43,9 +43,25 @@ public class SocMed : MonoBehaviour
 
     void InstantiatePost(Post post)
     {
-        Debug.Log(post.text);
-        PostPrefab.GetComponentInChildren<Text>().text = post.text;
+        var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
+        var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
+        var tagsField = PostPrefab.GetComponent<PostItem>().TagsField;
+
+        authorField.GetComponent<Text>().text = post.author;
+        bodyField.GetComponent<Text>().text = post.text;
+        tagsField.GetComponent<Text>().text = TagsToString(post.tags);
+
         var prefab = Instantiate(PostPrefab, gameObject.transform);
         prefab.transform.parent = gameObject.transform;
+    }
+
+    string TagsToString(List<string> tags)
+    {
+        var tagsText = "";
+        foreach (var tag in tags)
+        {
+            tagsText = $"{tagsText} #{tag}";
+        }
+        return tagsText;
     }
 }
