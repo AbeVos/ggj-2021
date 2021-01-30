@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 [System.Serializable]
 public class Message
@@ -60,7 +59,7 @@ public class SocMed : MonoBehaviour
         bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
 
         var prefab = Instantiate(PostPrefab, gameObject.transform);
-        prefab.transform.parent = gameObject.transform;
+        prefab.transform.SetParent(gameObject.transform, false);
 
         foreach (var reply in post.replies)
         {
@@ -74,11 +73,11 @@ public class SocMed : MonoBehaviour
         var words = text.Split().Select(x => x.Trim(punctuation)).ToList();
         var output = new List<string>();
 
-        foreach(var word in words)
+        foreach (var word in words)
         {
             if (_tags.Contains(word))
             {
-                output.Add($"<link={word}>{word}</link>");
+                output.Add($"<color=#1E90FF><link={word}>{word}</link></color>"); //todo: decent color implementation
             }
             else
             {
