@@ -10,7 +10,6 @@ namespace Script
 
         public Color lightColor = new Color(1, 1, 1, 0);
         public Color darkColor = new Color(0, 0, 0, 0);
-        public float fadeTime = 2f;
 
         private void Awake()
         {
@@ -36,7 +35,7 @@ namespace Script
 
             fadeImage.color = color;
             fadeImage.CrossFadeAlpha(0f, 0f, true);
-            fadeImage.CrossFadeAlpha(1, fadeTime, false);
+            fadeImage.CrossFadeAlpha(1, GameManager.TransitionFadeSpeed, false);
         }
 
         public void FadeIn(bool isLight)
@@ -45,11 +44,11 @@ namespace Script
 
             // https://stackoverflow.com/questions/42330509/crossfadealpha-not-working
             var color = (isLight) ? lightColor : darkColor;
-            color.a = 0;
+            color.a = 1;
 
             fadeImage.color = color;
-            fadeImage.CrossFadeAlpha(0f, 0f, true);
-            fadeImage.CrossFadeAlpha(1, fadeTime, false);
+            fadeImage.CrossFadeAlpha(1f, 0f, true);
+            fadeImage.CrossFadeAlpha(0, GameManager.TransitionFadeSpeed, false);
         }
     }
 }

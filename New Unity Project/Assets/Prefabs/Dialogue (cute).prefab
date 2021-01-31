@@ -369,7 +369,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 282, y: 377}
-  m_SizeDelta: {x: 504.3269, y: 357.1758}
+  m_SizeDelta: {x: 504.3269, y: 309.6}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &625930205701604404
 CanvasRenderer:
@@ -556,17 +556,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653310612416858577}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.036239196, w: 0.99934316}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1653310612614311856}
   m_Father: {fileID: 1653310613831474461}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.154}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170.13387, y: -167.27417}
+  m_AnchoredPosition: {x: 176, y: -182.47}
   m_SizeDelta: {x: 137.1853, y: 70.1538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310612416858581
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.73020524, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8440373, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -938,7 +938,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310612828267880
 CanvasRenderer:
@@ -968,8 +968,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Formatted string containing a pattern and a value representing the text
-    to be displayed.
+  m_text: Formatted string
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
   m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
@@ -996,12 +995,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.2
+  m_fontSize: 20
   m_fontSizeBase: 16.4
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 13
-  m_fontSizeMax: 72
+  m_fontSizeMin: 12
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1014,7 +1013,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -1073,7 +1072,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310612957428831
 CanvasRenderer:
@@ -1103,8 +1102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Formatted string containing a pattern and a value representing the text
-    to be displayed.
+  m_text: Formatted string con the text to be displayed.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
   m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
@@ -1131,12 +1129,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.2
+  m_fontSize: 16
   m_fontSizeBase: 16.4
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 13
-  m_fontSizeMax: 72
+  m_fontSizeMin: 12
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1149,7 +1147,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -1329,7 +1327,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310613108725913
 CanvasRenderer:
@@ -1360,7 +1358,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Formatted string containing a pattern and a value representing the text
-    to be displayed.
+    to be displayed.Formatted string containing a pattern and a value representing
+    the text to be displayed.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
   m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
@@ -1387,12 +1386,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.2
+  m_fontSize: 12
   m_fontSizeBase: 16.4
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 13
-  m_fontSizeMax: 72
+  m_fontSizeMin: 12
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1405,7 +1404,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -1630,7 +1629,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310613467912790
 CanvasRenderer:
@@ -1660,8 +1659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Formatted string containing a pattern and a value representing the text
-    to be displayed.
+  m_text: 'Formatted '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
   m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
@@ -1688,12 +1686,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.2
+  m_fontSize: 20
   m_fontSizeBase: 16.4
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 13
-  m_fontSizeMax: 72
+  m_fontSizeMin: 12
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1706,7 +1704,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -1887,8 +1885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.066101074, y: 19.174194}
-  m_SizeDelta: {x: -80.4448, y: -156.5413}
+  m_AnchoredPosition: {x: 0.066101074, y: 27.3609}
+  m_SizeDelta: {x: -80.4448, y: -140.1678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310613831474463
 CanvasRenderer:
@@ -1962,8 +1960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -19.44349}
+  m_SizeDelta: {x: 0, y: 38.887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310613882371030
 CanvasRenderer:
@@ -1994,7 +1992,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'A delegate is a type that represents references to methods with a particular
-    parameter list and return type. '
+    parameter list and return type. A delegate is a type that represents references
+    to methods with a particular parameter list and return type. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
   m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
@@ -2021,8 +2020,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.4
-  m_fontSizeBase: 33.4
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2033,13 +2032,13 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -7
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
