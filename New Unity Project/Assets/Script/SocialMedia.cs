@@ -83,18 +83,17 @@ public class SocialMedia : MonoBehaviour
 
     private void InstantiatePost(Post post)
     {
-        var thisPrefab = PostPrefab;
-        var postItem = thisPrefab.GetComponent<PostItem>();
-        var authorField = thisPrefab.GetComponent<PostItem>().AuthorField;
-        var bodyField = thisPrefab.GetComponent<PostItem>().BodyField;
+        var prefab = Instantiate(PostPrefab, gameObject.transform);
+        prefab.transform.SetParent(gameObject.transform, false);
 
-        authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
+        var postItem = prefab.GetComponent<PostItem>();
+        var authorField = postItem.AuthorField;
+        var bodyField = postItem.BodyField;
 
         var bodyText = ReplaceTagsForLinks(post.text, postItem);
-        bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
 
-        var prefab = Instantiate(thisPrefab, gameObject.transform);
-        prefab.transform.SetParent(gameObject.transform, false);
+        authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
+        bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
 
         foreach (var reply in post.replies)
         {
