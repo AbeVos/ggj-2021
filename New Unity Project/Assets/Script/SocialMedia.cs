@@ -34,28 +34,63 @@ public class SocialMedia : MonoBehaviour
     public GameObject ReplyPrefab;
     private string _postFilter;
     private List<string> _tags;
+    private InputField _inputField;
+    private string _filter;
 
     void Start()
     {
+        _inputField = gameObject.GetComponentInChildren<InputField>();
         TextAsset posts_json = Resources.Load<TextAsset>("posts");
         PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
         _tags = container.posts.SelectMany(x => x.tags).ToList();
 
-        foreach (Post post in container.posts)
+        var orderedPosts = container.posts.OrderBy(x => x.date).ToList();
+        foreach (Post post in orderedPosts)
         {
             InstantiatePost(post);
         }
     }
 
-    void InstantiatePost(Post post)
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            FilterPosts();
+        }
+    }
+
+    private void FilterPosts()
+    {
+        _filter = _inputField.text;
+
+        foreach (Transform child in transform)
+        {
+            if (_filter == string.Empty)
+            {
+                child.gameObject.SetActive(true);
+            }
+            else
+            {
+                var postItem = child.GetComponent<PostItem>();
+                if (postItem != null)
+                {
+                    var shouldShow = postItem.Tags.Contains(_filter);
+                    child.gameObject.SetActive(shouldShow);
+                }
+            }
+        }
+    }
+
+    private void InstantiatePost(Post post)
+    {
+        var postItem = PostPrefab.GetComponent<PostItem>();
         var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
         var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
 
         authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
 
-        var bodyText = ReplaceTagsForLinks(post.text);
+        var bodyText = ReplaceTagsForLinks(post.text, postItem);
         bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
 
         var prefab = Instantiate(PostPrefab, gameObject.transform);
@@ -63,11 +98,11 @@ public class SocialMedia : MonoBehaviour
 
         foreach (var reply in post.replies)
         {
-            //InstantiateReply(reply, prefab);
+            InstantiateReply(reply, prefab);
         }
     }
 
-    string ReplaceTagsForLinks(string text)
+    private string ReplaceTagsForLinks(string text, PostItem postItem)
     {
         var punctuation = text.Where(char.IsPunctuation).Distinct().ToArray();
         var words = text.Split().Select(x => x.Trim(punctuation)).ToList();
@@ -77,6 +112,7 @@ public class SocialMedia : MonoBehaviour
         {
             if (_tags.Contains(word))
             {
+                postItem.Tags.Add(word);
                 output.Add($"<color=#1E90FF><link={word}>{word}</link></color>"); //todo: decent color implementation
             }
             else
@@ -87,16 +123,15 @@ public class SocialMedia : MonoBehaviour
         return string.Join(" ", output);
     }
 
-    void InstantiateReply(Message reply, GameObject parent)
+    private void InstantiateReply(Message reply, GameObject parent)
     {
         var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
         var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
 
-        authorField.GetComponent<Text>().text = $"{reply.author} - {reply.date}";
-        bodyField.GetComponent<Text>().text = reply.text;
+        authorField.GetComponent<TextMeshProUGUI>().text = $"{reply.author} - {reply.date}";
+        bodyField.GetComponent<TextMeshProUGUI>().text = reply.text;
 
         var prefab = Instantiate(ReplyPrefab, parent.transform);
-        prefab.transform.parent = parent.transform;
-
+        prefab.transform.SetParent(parent.transform);
     }
 }

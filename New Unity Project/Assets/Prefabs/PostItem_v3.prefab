@@ -162,8 +162,8 @@ GameObject:
   - component: {fileID: 3621551393193164077}
   - component: {fileID: 2926382300130208025}
   - component: {fileID: 2114260878068275562}
-  - component: {fileID: 7832915920149097586}
   - component: {fileID: 2954114479394655101}
+  - component: {fileID: 7832915920149097586}
   - component: {fileID: 7639223867878446164}
   m_Layer: 5
   m_Name: PostItem_v3
@@ -241,21 +241,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &7832915920149097586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7495374561732386824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62127f2fd09e37c47be623aa3247dc1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AuthorField: {fileID: 8903677438437076340}
-  BodyField: {fileID: 381991385753004658}
-  TagsField: {fileID: 0}
 --- !u!114 &2954114479394655101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +330,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7832915920149097586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495374561732386824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62127f2fd09e37c47be623aa3247dc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AuthorField: {fileID: 8903677438437076340}
+  BodyField: {fileID: 381991385753004658}
+  TagsField: {fileID: 0}
 --- !u!114 &7639223867878446164
 MonoBehaviour:
   m_ObjectHideFlags: 0
