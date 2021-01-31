@@ -34,6 +34,10 @@ public class VariableStorage : Yarn.Unity.VariableStorageBehaviour
         {
             return new Yarn.Value(person.Mood);
         }
+        else if (variableName == "$player_name")
+        {
+            return new Yarn.Value("Quinn");
+        }
 
         return new Yarn.Value("<b>" + variableName + "</b>");
     }
