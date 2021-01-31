@@ -22,6 +22,9 @@ Dat doet me denken aan die keer {Gebeurtenis/locatie}.
 - Indigo
 - Jaden
 - Kim
+- Lindsay
+- Max
+- Nikita
 
 ## De Bruiloft
 
@@ -147,3 +150,5 @@ Het genre is {genre_X}.
 
 ### Incident D
 {N} brak zijn arm.
+
+### Berichten

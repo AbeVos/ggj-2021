@@ -88,16 +88,20 @@ X: What can you do, right?
 X: It didn't really matter anyway, since you where there, weren't you?
 
 -> Absolutely! You where... Making music... And it was great!
+	<<change_mood Who -1>>
 	<<set $emotion to "sad">>
 	X: Yeah...
 	<<set $emotion to "neutral">>
 	X: It was great.
 -> Yes, you where great playing your trombone. A beautiful rendition of Beethoven.
+	<<change_mood Who +2>>
+	<<set $emotion to "happy">>
 	X: Yes!
 	X: That was a great time.
 	X: It really meant a lot to me for you to be there.
 	X: After everything that happened between us.
 -> Playing GENRE on your trombone was a masterful stroke!
+	<<change_mood Who -1>>
 	<<set $emotion to "neutral">>
 	X: What?
 	X: I don't even like GENRE!
@@ -105,6 +109,7 @@ X: It didn't really matter anyway, since you where there, weren't you?
 	X: I guess you weren't there after all...
 	X: That's fine.
 -> Very clever how you used your INSTRUMENT to play GENRE.
+	<<change_mood Who -2>>
 	X: That's not right at all!
 	<<set $emotion to "sad">>
 	X: I guess you weren't there after all...
@@ -116,9 +121,100 @@ X: It didn't really matter anyway, since you where there, weren't you?
 title: incident
 tags:
 ---
-I guess we haven't been seeing much of each other after that.
-Of course, it has been a difficult time for all of us after the {$tag_incident}.
-Can you believe it has been five years already?
-It came so unexpectedly.
+X: I guess we haven't been seeing much of each other after that.
+X: Of course, it has been a difficult time for all of us after the {$tag_incident}.
+X: Can you believe it has been five years already?
+<<set $emotion to "sad">>
+X: It came so unexpectedly.
+X: One moment you're going about your day, next you wake up in a hospital.
+X: It sure wasn't great walking around with that {$tag_cast}.
+<<set $emotion to "happy">>
+X: But everyone wanted to sign it, so at least that was fun.
+<<set $emotion to "neutral">>
 
+<<if $mood >= 0>>
+	<<set $emotion to "neutral">>
+	X: You remember that day...
+	X: Right?
+<<endif>>
+<<if $mood < 0>>
+	<<set $emotion to "sad">>
+	X: But I don't suppose you remember that either, do you?
+<<endif>>
+
+-> I remember, you broke your arm on that faulty escalator.
+	<<change_mood -3>>
+	<<set $emotion to "sad">>
+	X: What?
+	X: It wasn't an escalator.
+	X: I broke my arm after you hit me with your car!
+-> If I recall correctly, you broke your leg on that broken escalator.
+	<<change_mood -3>>
+	<<set $emotion to "sad">>
+	X: What are you talking about?
+	X: You hit me with your car and broke my arm!
+	X: You seriously do not remember?!
+-> I remember. The car crash, when you broke your arm.
+	<<change_mood 3>>
+	<<set $emotion to "neutral">>
+	X: That's the one.
+	X: Of course, you could hardly forget.
+	<<set $emotion to "sad">>
+	X: After all, you where the one driving.
+-> I recall! You crashed your car and broke your arm.
+	<<change_mood -2>>
+	<<set $emotion to "sad">>
+	X: What?
+	X: No!
+	X: You hit me with your car!
+
+<<if $mood > 2>>
+	[[happy_ending]]
+<<endif>>
+<<if $mood >= 1 and $mood <= 2>>
+	[[I'm really sorry about that, Kim.|wrong_name]]
+	[[I'm really sorry about that, Lindsay.|wrong_name]]
+	[[I'm really sorry about that, Max.|correct_name]]
+	[[I'm really sorry about that, Nikita.|wrong_name]]
+<<endif>>
+<<if $mood < 0>>
+	[[sad_ending]]
+<<endif>>
+===
+
+title: wrong_name
+tags:
+---
+<<set $emotion to "neutral">>
+X: Excuse me?
+<<set $emotion to "sad">>
+X: You don't remember my name?
+X: Well, this is awkward..
+[[sad_ending]]
+===
+
+title: correct_name
+tags:
+---
+<<set $emotion to "happy">>
+X: For a moment I thought that you had forgotten my name.
+X: But you would never do something like that!
+[[happy_ending]]
+===
+
+title: happy_ending
+tags:
+---
+<<set $emotion to "happy">>
+X: Anyway, this is my floor.
+X: It was great seeing you again!
+X: I'll see you around, {$player_name}!
+===
+
+title: sad_ending
+tags:
+---
+<<set $emotion to "sad">>
+X: Well I guess we weren't such good friends after all...
+X: I have to go now.
 ===
