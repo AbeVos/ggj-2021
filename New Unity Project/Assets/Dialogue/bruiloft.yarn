@@ -6,8 +6,10 @@ X: ...?
 <<change_mood Who 1>>
 <<set $emotion to "happy">>
 X: Look who it is!
+Internal: Wait! Do I know them?
 X: {$player_name}!
 X: I haven't seen you in ages!
+Internal: Oh no! I forgot their name!
 
 -> Hi... you!
 	X: It's been too long!
@@ -26,6 +28,8 @@ tags:
 ---
 <<set $emotion to "neutral">>
 X: When was the last time we spoke?
+Internal: I need to figure out their name.
+Internal: Or else this will become really awkward.
 X: It must have been at that {$tag_wedding} some two years ago.
 X: You remember that, don't you?
 X: That was some idea. Planning an outdoor {$tag_wedding} in the dead of winter.
@@ -50,14 +54,16 @@ X: Anyway, surely you remember that day?
 	X: ...
 	X: I'm not quite sure we are talking about the same wedding.
 	X: It was Adela and Billie's wedding!
-	Player: Of course...
-	X: Don't worry, happens to the best of us.
+	Internal: Of course...
+	X: Don't worry, it happens to the best of us.
 -> Of course I do! That was quite a... wedding wasn't it?
 	<<change_mood Who 0>>
 	<<set $emotion to "neutral">>
 	X: Yeah...
 	X: I guess it was.
 
+Internal: That was a close one.
+Internal: Now, what was their name again?
 [[concert]]
 ===
 
@@ -112,5 +118,7 @@ tags:
 ---
 I guess we haven't been seeing much of each other after that.
 Of course, it has been a difficult time for all of us after the {$tag_incident}.
-Can you believe it has been SOME years?
+Can you believe it has been five years already?
+It came so unexpectedly.
+
 ===
