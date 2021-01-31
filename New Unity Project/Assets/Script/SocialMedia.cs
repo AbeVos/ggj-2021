@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
@@ -33,12 +32,12 @@ public class SocialMedia : MonoBehaviour
     public GameObject PostPrefab;
     public GameObject ReplyPrefab;
     private List<string> _tags;
-    private InputField _inputField;
+    private TMP_InputField _inputField;
     private string _filter;
 
     void Start()
     {
-        _inputField = gameObject.GetComponentInChildren<InputField>();
+        _inputField = GameObject.Find("InputField").GetComponent<TMP_InputField>();
         TextAsset posts_json = Resources.Load<TextAsset>("posts");
         PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
