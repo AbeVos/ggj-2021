@@ -51,26 +51,6 @@
 			"text": "It's hot as balls at this wedding! Whose idea was it to do a ceremony in a poorly ventilated room in the middle of June!",
 			"tags": ["wedding"],
 			"replies": []
-		},
-		{
-			"date": "12 january 2018",
-			"author": "C",
-			"text": "Dit is een test bericht over koetjes en kalfjes.",
-			"tags": ["koetjes", "kalfjes"],
-			"replies": [
-				{
-					"date": "16 january 2018",
-					"author": "A",
-					"text": "Dit is mijn uitgebreide mening over koetjes en kalfjes.\n\n1/N"
-				}
-			]
-		},
-		{
-			"date": "14 december 2018",
-			"author": "B",
-			"text": "Dit omschrijf ik als controversieel, maar iedereen in mijn bubbel gaat het er toch wel mee eens zijn.",
-			"tags": ["meningen"],
-			"replies": []
 		}
 	]
 }

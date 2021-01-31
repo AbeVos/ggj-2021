@@ -44,7 +44,7 @@ public class SocialMedia : MonoBehaviour
 
         _tags = container.posts.SelectMany(x => x.tags).ToList();
 
-        var orderedPosts = container.posts.OrderBy(x => x.date).ToList();
+        var orderedPosts = container.posts.OrderByDescending(x => x.date).ToList();
         foreach (Post post in orderedPosts)
         {
             InstantiatePost(post);
