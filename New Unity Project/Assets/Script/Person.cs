@@ -128,6 +128,8 @@ public class Person : MonoBehaviour
         {
             music.StartFadeVolume("music_happy", 0f, 1f);
             music.StartFadeVolume("music_sad", 1f, 1f);
+
+            animator.SetTrigger("sad");
         }
         else if (Mood < 0)
         {
@@ -138,6 +140,8 @@ public class Person : MonoBehaviour
         {
             music.StartFadeVolume("music_happy", 1f, 1f);
             music.StartFadeVolume("music_sad", 0f, 1f);
+
+            animator.SetTrigger("happy");
         }
 
         Debug.Log("Current mood score: " + Mood as string);
