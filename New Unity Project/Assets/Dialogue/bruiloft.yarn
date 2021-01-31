@@ -34,7 +34,7 @@ X: It must have been at that {$tag_wedding} some two years ago.
 X: You remember that, don't you?
 X: That was some idea. Planning an outdoor {$tag_wedding} in the dead of winter.
 X: At least the reception was nice.
-X: Even despite the bride's best friend performing with their GENRE band.
+X: Even despite the bride's best friend performing with their Ska band.
 X: Wasn't a great fan of that.
 X: Also, I was not sold on the {$tag_cake}.
 X: It had a very strange taste to it.
@@ -100,15 +100,15 @@ X: It didn't really matter anyway, since you where there, weren't you?
 	X: That was a great time.
 	X: It really meant a lot to me for you to be there.
 	X: After everything that happened between us.
--> Playing GENRE on your trombone was a masterful stroke!
+-> Playing Ska on your trombone was a masterful stroke!
 	<<change_mood Who -1>>
 	<<set $emotion to "neutral">>
 	X: What?
-	X: I don't even like GENRE!
+	X: I don't even like Ska!
 	<<set $emotion to "sad">>
 	X: I guess you weren't there after all...
 	X: That's fine.
--> Very clever how you used your INSTRUMENT to play GENRE.
+-> Very clever how you used your INSTRUMENT to play Ska.
 	<<change_mood Who -2>>
 	X: That's not right at all!
 	<<set $emotion to "sad">>
