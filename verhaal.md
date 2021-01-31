@@ -4,7 +4,7 @@ Ik heb je niet meer gezien sinds {Gebeurtenis}!
 Ik moest laatst nog terugdenken aan {Locatie}.
 Dat doet me denken aan die keer {Gebeurtenis/locatie}.
 
-### Kandidaten
+### Kandidate n
 
 - Adela
   - Partner van B.
@@ -22,6 +22,9 @@ Dat doet me denken aan die keer {Gebeurtenis/locatie}.
 - Indigo
 - Jaden
 - Kim
+- Lindsay
+- Max
+- Nikita
 
 ## De Bruiloft
 
@@ -36,7 +39,7 @@ Reacties:
 - {D} en {E} zagen er erg gelukkig uit (-1)
 - {A} en {B} zagen er erg gelukkig uit (+1)
 
-### Bruiloft A 
+### Bruiloft A  
 
 Vond plaats in januari.
 {A} en {B} trouwen.
@@ -52,7 +55,7 @@ Aanwezigen:
 - D
 - En anderen?
 
-### Bruiloft B
+### Bruiloft  B
 
 Vond plaats in december.
 {D} en {E} trouwen.
@@ -135,3 +138,17 @@ Het genre is {genre_X}.
 	- In juni reageerde {F}: Volgens mij heb ik dan wel tijd.
 
 ## Het incident
+
+### Incident A
+{F} brak zijn arm door een op hol geslagen roltrap.
+
+### Incident B
+{K} brak zijn been door een op hol geslagen roltrap.
+
+### Incident C
+{M} brak zijn arm in een auto ongeluk.
+
+### Incident D
+{N} brak zijn arm in een auto ongeluk.
+
+### Berichten
