@@ -13,7 +13,6 @@ public class VariableStorage : Yarn.Unity.VariableStorageBehaviour
 
     public override void SetValue(string variableName, Yarn.Value value)
     {
-        Debug.Log(variableName);
         if (variableName == "$emotion")
         {
             Debug.Log("Change emotion to " + value.AsString);
@@ -31,6 +30,11 @@ public class VariableStorage : Yarn.Unity.VariableStorageBehaviour
                 + "</b>"
             );
         }
+        else if (variableName == "$mood")
+        {
+            return new Yarn.Value(person.Mood);
+        }
+
         return new Yarn.Value("<b>" + variableName + "</b>");
     }
 

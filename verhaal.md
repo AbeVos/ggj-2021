@@ -149,6 +149,6 @@ Het genre is {genre_X}.
 {M} brak zijn arm in een auto ongeluk.
 
 ### Incident D
-{N} brak zijn arm.
+{N} brak zijn arm in een auto ongeluk.
 
 ### Berichten
