@@ -435,18 +435,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653310612373674617}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0420278, w: 0.9991165}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0042119958, w: 0.9999911}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1653310613108725927}
   m_Father: {fileID: 1653310612585429511}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.817}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 356.3872, y: -192.5236}
-  m_SizeDelta: {x: 214, y: 100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.483}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310612373674621
 CanvasRenderer:
@@ -689,7 +689,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653310612585429508}
-  m_LocalRotation: {x: -0, y: -0, z: 0.99928, w: 0.037941363}
+  m_LocalRotation: {x: -0, y: -0, z: -0.99816644, w: 0.06052929}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -699,11 +699,11 @@ RectTransform:
   - {fileID: 1653310612373674616}
   m_Father: {fileID: 1653310613329409678}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 175.651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 186.94}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.066101074, y: -3.3106995}
-  m_SizeDelta: {x: -25.5525, y: -92.1286}
+  m_AnchoredPosition: {x: -6.9999986, y: 4.9999866}
+  m_SizeDelta: {x: -25.5525, y: -20.1789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310612585429752
 CanvasRenderer:
@@ -836,8 +836,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
-  m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
+  m_sharedMaterial: {fileID: -7337202461770381580, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -970,8 +970,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Formatted string
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
-  m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
+  m_sharedMaterial: {fileID: -7337202461770381580, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1104,8 +1104,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Formatted string con the text to be displayed.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
-  m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
+  m_sharedMaterial: {fileID: -7337202461770381580, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1205,10 +1205,10 @@ RectTransform:
   m_Father: {fileID: 1653310612585429511}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.162}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 122.38721, y: -192.5236}
-  m_SizeDelta: {x: 214, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310613095246838
 CanvasRenderer:
@@ -1361,8 +1361,8 @@ MonoBehaviour:
     to be displayed.Formatted string containing a pattern and a value representing
     the text to be displayed.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
-  m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
+  m_sharedMaterial: {fileID: -7337202461770381580, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1444,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1653310613329409678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1499,18 +1499,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653310613383044492}
-  m_LocalRotation: {x: -0, y: -0, z: 0.033898436, w: 0.99942535}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008310598, w: 0.9999655}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1653310612957428829}
   m_Father: {fileID: 1653310612585429511}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.885}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 122.38721, y: -72.523605}
-  m_SizeDelta: {x: 214, y: 100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.952}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310613383044480
 CanvasRenderer:
@@ -1661,8 +1661,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Formatted '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
-  m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
+  m_sharedMaterial: {fileID: -7337202461770381580, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1754,18 +1754,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653310613773517808}
-  m_LocalRotation: {x: -0, y: -0, z: 0.028920274, w: 0.99958175}
+  m_LocalRotation: {x: -0, y: -0, z: 0.055138055, w: -0.9984788}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1653310612828267894}
   m_Father: {fileID: 1653310612585429511}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.314}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 356.3872, y: -72.523605}
-  m_SizeDelta: {x: 214, y: 100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -6.322}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1653310613773517812
 CanvasRenderer:
@@ -1995,8 +1995,8 @@ MonoBehaviour:
     parameter list and return type. A delegate is a type that represents references
     to methods with a particular parameter list and return type. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c93f503726910f040996ad1be19d5455, type: 2}
-  m_sharedMaterial: {fileID: -7197457772193446220, guid: c93f503726910f040996ad1be19d5455, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
+  m_sharedMaterial: {fileID: -7337202461770381580, guid: 905df8cc5105b23489af8200ba2e2d22, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
