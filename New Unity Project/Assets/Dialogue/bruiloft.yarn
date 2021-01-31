@@ -123,7 +123,7 @@ tags:
 ---
 X: I guess we haven't been seeing much of each other after that.
 X: Of course, it has been a difficult time for all of us after the {$tag_incident}.
-X: Can you believe it has been five years already?
+X: Can you believe it has been three years already?
 <<set $emotion to "sad">>
 X: It came so unexpectedly.
 X: One moment you're going about your day, next you wake up in a hospital.

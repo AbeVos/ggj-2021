@@ -53,24 +53,99 @@
 			"replies": []
 		},
 		{
-			"date": "12 january 2018",
-			"author": "C",
-			"text": "Dit is een test bericht over koetjes en kalfjes.",
-			"tags": ["koetjes", "kalfjes"],
+			"date": "17 February 2018",
+			"author": "Charlie",
+			"text": "My big concert is already next month!",
+			"tags": ["concert"],
 			"replies": [
 				{
-					"date": "16 january 2018",
-					"author": "A",
-					"text": "Dit is mijn uitgebreide mening over koetjes en kalfjes.\n\n1/N"
+					"date": "18 February 2018",
+					"author": "Adela",
+					"text": "I'll be there for sure!"
 				}
 			]
 		},
 		{
-			"date": "14 december 2018",
-			"author": "B",
-			"text": "Dit omschrijf ik als controversieel, maar iedereen in mijn bubbel gaat het er toch wel mee eens zijn.",
-			"tags": ["meningen"],
-			"replies": []
+			"date": "21 February 2018",
+			"author": "Lindsay",
+			"text": "New! A trombone that you can play with just one hand! Great for concerts!",
+			"tags": ["concert", "sponsored"],
+			"replies": [
+				{
+					"date": "21 February 2018",
+					"author": "Elliott",
+					"text": "I know someone that uses on of those for their coming concert!"
+				}
+			]
+		},
+		{
+			"date": "14 March 2018",
+			"author": "D",
+			"text": "There's no way I'll spend a whole evening listening to someone playing a jawharp! That'll be some concert!",
+			"tags": ["concert"],
+			"replies": [
+			]
+		},
+		{
+			"date": "15 March 2018",
+			"author": "Elliott",
+			"text": "Finley and I promised a friend to attend their Beethoven concert, but I can't stand that. Give me GENRE any day!",
+			"tags": ["concert"],
+			"replies": [
+				{
+					"date": "15 March 2018",
+					"author": "Gab",
+					"text": "I also cancelled. I really don't want to miss Charlie!"
+				}
+			]
+		},
+		{
+			"date": "15 March 2018",
+			"author": "Harley",
+			"text": "As much as I want to hear how someone plays a trombone with a single arm, I really want to hear Charlie play! Shame, if it weren't a Beethoven concert, I would've been there.",
+			"tags": ["concert"],
+			"replies": [
+				{
+					"date": "15 March 2018",
+					"author": "Gab",
+					"text": "I also cancelled. I really don't want to miss Charlie!"
+				}
+			]
+		},
+		{
+			"date": "18 March 2018",
+			"author": "I",
+			"text": "Extended due to success! J and I will perform for the third evening in a row at Ramsey's Pianobar! Come and listen to the sweet tones of J's trombone and my jawharp for an evening full of jazz!",
+			"tags": ["concert"],
+			"replies": [
+			]
+		},
+		{
+			"date": "2 June 2018",
+			"author": "Kim",
+			"text": "In next week's concert, I'll be performing some Beethoven on my kazoo. Everyone is invited!",
+			"tags": ["concert"],
+			"replies": [
+				{
+					"date": "5 June 2018",
+					"author": "Harley",
+					"text": "I'd have to check whether I can make that!"
+				}
+			]
+		},
+
+		{
+			"date": "2 June 2017",
+			"author": "Kim",
+			"text": "In next week's concert, I'll be performing some Beethoven on my kazoo. Everyone is invited!",
+			"tags": ["concert"],
+			"replies": [
+				{
+					"date": "5 June 2018",
+					"author": "Harley",
+					"text": "I'd have to check whether I can make that!"
+				}
+			]
 		}
 	]
 }
