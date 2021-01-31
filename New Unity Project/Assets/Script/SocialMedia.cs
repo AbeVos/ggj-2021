@@ -44,7 +44,7 @@ public class SocialMedia : MonoBehaviour
 
         _tags = container.posts.SelectMany(x => x.tags).ToList();
 
-        var orderedPosts = container.posts.OrderBy(x => x.date).ToList();
+        var orderedPosts = container.posts.OrderByDescending(x => x.date).ToList();
         foreach (Post post in orderedPosts)
         {
             InstantiatePost(post);
@@ -124,8 +124,8 @@ public class SocialMedia : MonoBehaviour
 
     private void InstantiateReply(Message reply, GameObject parent)
     {
-        var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
-        var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
+        var authorField = ReplyPrefab.GetComponent<PostItem>().AuthorField;
+        var bodyField = ReplyPrefab.GetComponent<PostItem>().BodyField;
 
         authorField.GetComponent<TextMeshProUGUI>().text = $"{reply.author} - {reply.date}";
         bodyField.GetComponent<TextMeshProUGUI>().text = reply.text;

@@ -66,8 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dit omschrijf ik als controversieel maar iedereen in mijn bubbel gaat het
-    er toch wel mee eens zijn
+  m_text: testtext
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3114d901a7ccb8e44aa146e4c272c7aa, type: 2}
   m_sharedMaterial: {fileID: -2540741098298273646, guid: 3114d901a7ccb8e44aa146e4c272c7aa, type: 2}
@@ -456,7 +455,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
