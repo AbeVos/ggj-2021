@@ -32,7 +32,6 @@ public class SocialMedia : MonoBehaviour
 {
     public GameObject PostPrefab;
     public GameObject ReplyPrefab;
-    private string _postFilter;
     private List<string> _tags;
     private InputField _inputField;
     private string _filter;
