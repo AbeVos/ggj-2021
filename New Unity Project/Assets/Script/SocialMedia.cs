@@ -124,8 +124,8 @@ public class SocialMedia : MonoBehaviour
 
     private void InstantiateReply(Message reply, GameObject parent)
     {
-        var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
-        var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
+        var authorField = ReplyPrefab.GetComponent<PostItem>().AuthorField;
+        var bodyField = ReplyPrefab.GetComponent<PostItem>().BodyField;
 
         authorField.GetComponent<TextMeshProUGUI>().text = $"{reply.author} - {reply.date}";
         bodyField.GetComponent<TextMeshProUGUI>().text = reply.text;

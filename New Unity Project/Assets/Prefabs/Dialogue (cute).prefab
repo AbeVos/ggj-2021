@@ -50,7 +50,7 @@ MonoBehaviour:
   textLanguage: 
   variableStorage: {fileID: 625930205171341010}
   dialogueUI: {fileID: 625930205171341011}
-  startNode: X
+  startNode: introduction
   startAutomatically: 1
   onNodeStart:
     m_PersistentCalls:
