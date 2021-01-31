@@ -168,16 +168,16 @@ X: But everyone wanted to sign it, so at least that was fun.
 	X: No!
 	X: You hit me with your car!
 
-<<if $mood > 2>>
+<<if $mood > 3>>
 	[[happy_ending]]
 <<endif>>
-<<if $mood >= 1 and $mood <= 2>>
+<<if $mood >= 2 and $mood <= 3>>
 	[[I'm really sorry about that, Kim.|wrong_name]]
 	[[I'm really sorry about that, Lindsay.|wrong_name]]
 	[[I'm really sorry about that, Max.|correct_name]]
 	[[I'm really sorry about that, Nikita.|wrong_name]]
 <<endif>>
-<<if $mood < 0>>
+<<if $mood < 1>>
 	[[sad_ending]]
 <<endif>>
 ===
