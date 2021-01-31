@@ -17,13 +17,25 @@ namespace Script
         private int _currentLevelIndex = 1;
         private int _lastLevelIndex = 0;
 
+        private static bool _hasLoadedOnce = false;
+
         public GameManager()
         {
             State = GameState.Init;
             
             // Ik doe hier de aanname dat You een beetje oke gaat lezen in zinnen
             PlayerName = "You";
-            
+        }
+
+        private void OnEnable()
+        {
+            if (!_hasLoadedOnce) LoadMenu();
+            _hasLoadedOnce = true;
+        }
+
+        private void LoadMenu()
+        {
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
         }
 
         public void ResetGame()
