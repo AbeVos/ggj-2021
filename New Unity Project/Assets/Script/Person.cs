@@ -4,15 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public enum Emotion
-{
-    Happy,
-    Neutral,
-    Sad,
-};
-
-[System.Serializable]
-public class OnEmotionChanged : UnityEvent<Emotion> {};
+public class OnEmotionChanged : UnityEvent<string> {};
 
 [System.Serializable]
 public class OnMoodChanged : UnityEvent<int> {};
@@ -37,14 +29,13 @@ public class Person : MonoBehaviour
         }
         set
         {
-            // Debug.Log("Set mood");
             mood_event.Invoke(value);
             _mood = value;
         }
     }
 
-    private Emotion _current_emotion = Emotion.Neutral;
-    public Emotion CurrentEmotion
+    private string _current_emotion = "neutral";
+    public string CurrentEmotion
     {
         get
         {
@@ -52,35 +43,29 @@ public class Person : MonoBehaviour
         }
         set
         {
+            emote_event.Invoke(value);
             _current_emotion = value;
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        voice = GetComponent<AudioSet>();
+        voice = GetComponent<AudioSet>() as AudioSet;
 
         if (emote_event == null) emote_event = new OnEmotionChanged();
         if (mood_event == null) mood_event = new OnMoodChanged();
+    }
 
-        emote_event.AddListener(ChangeEmotion);
-
-        mood_event.AddListener(ChangeMood);
-
-        Mood = -1;
-
+    void Start()
+    {
         music.StartFadeVolume("music_base", 1f, 1f);
+
+        Mood = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown && emote_event != null)
-        {
-            emote_event.Invoke(Emotion.Neutral);
-        }
-
         if (Input.GetKeyDown("down")) Mood -= 1;
         if (Input.GetKeyDown("up")) Mood += 1;
     }
@@ -90,14 +75,16 @@ public class Person : MonoBehaviour
         StopSpeaking();
         switch (_current_emotion)
         {
-            case Emotion.Happy:
+            case "happy":
                 voice.StartFadeVolume("happy", 1f, voice.fading_time);
                 break;
-            case Emotion.Neutral:
+            case "neutral":
                 voice.StartFadeVolume("neutral", 1f, voice.fading_time);
                 break;
-            default:
+            case "sad":
                 voice.StartFadeVolume("sad", 1f, voice.fading_time);
+                break;
+            default:
                 break;
         }
     }
@@ -110,20 +97,24 @@ public class Person : MonoBehaviour
         voice.StartFadeVolume("sad", 0f, voice.fading_time);
     }
 
-    public void ChangeEmotion(Emotion emotion)
+    public void ChangeEmotion(string emotion)
     {
         Debug.Log("I feel " + emotion as string);
         // StartSpeaking(Emotion.Sad);
     }
 
-    public void ChangeMood(int score)
+    [Yarn.Unity.YarnCommand("change_mood")]
+    public void ChangeMood(string value)
     {
-        if (score <= -3)
+        int int_value = int.Parse(value);
+        Mood += int_value;
+
+        if (Mood <= -3)
         {
             music.StartFadeVolume("music_happy", 0f, 1f);
             music.StartFadeVolume("music_sad", 1f, 1f);
         }
-        else if (score < 0)
+        else if (Mood < 0)
         {
             music.StartFadeVolume("music_happy", 0f, 1f);
             music.StartFadeVolume("music_sad", 0f, 1f);
@@ -134,6 +125,6 @@ public class Person : MonoBehaviour
             music.StartFadeVolume("music_sad", 0f, 1f);
         }
 
-        Debug.Log("Current mood score: " + score as string);
+        Debug.Log("Current mood score: " + Mood as string);
     }
 }

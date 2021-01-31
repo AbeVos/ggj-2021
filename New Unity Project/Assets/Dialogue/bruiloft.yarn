@@ -3,6 +3,7 @@ tags:
 ---
 <<set $emotion to "neutral">>
 X: ...?
+<<change_mood Who 1>>
 <<set $emotion to "happy">>
 X: Look who it is!
 X: {$player_name}!
@@ -40,11 +41,11 @@ X: Very strange..
 X: Anyway, surely you remember that day?
 
 -> Sure I do, Adela and Billie looked so happy that night!
-	<<change_mood 1>>
+	<<change_mood Who 1>>
 	<<set $emotion to "happy">>
 	X: So you DO remember!
 -> Sure I do, Davy and Elliott looked so happy together!
-	<<change_mood -1>>
+	<<change_mood Who -1>>
 	<<set $emotion to "sad">>
 	X: ...
 	X: I'm not quite sure we are talking about the same wedding.
@@ -52,7 +53,7 @@ X: Anyway, surely you remember that day?
 	Player: Of course...
 	X: Don't worry, happens to the best of us.
 -> Of course I do! That was quite a... wedding wasn't it?
-	<<change_mood 0>>
+	<<change_mood Who 0>>
 	<<set $emotion to "neutral">>
 	X: Yeah...
 	X: I guess it was.
