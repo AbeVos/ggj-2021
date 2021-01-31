@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class OnEmotionChanged : UnityEvent<string> {};
+public class OnEmotionChanged : UnityEvent<string> { };
 
 [System.Serializable]
-public class OnMoodChanged : UnityEvent<int> {};
+public class OnMoodChanged : UnityEvent<int> { };
 
 public class Person : MonoBehaviour
 {
     public AudioSet music;
+    public Animator animator;
 
     // Event for performing an emotion.
     public OnEmotionChanged emote_event;
@@ -51,6 +51,7 @@ public class Person : MonoBehaviour
     void Awake()
     {
         voice = GetComponent<AudioSet>() as AudioSet;
+        animator = GetComponentInChildren<Animator>();
 
         if (emote_event == null) emote_event = new OnEmotionChanged();
         if (mood_event == null) mood_event = new OnMoodChanged();
@@ -68,6 +69,20 @@ public class Person : MonoBehaviour
     {
         if (Input.GetKeyDown("down")) Mood -= 1;
         if (Input.GetKeyDown("up")) Mood += 1;
+
+        var voiceSourcesPlaying = 0;
+        for (int i = 0; i < voice.sources.Count; i++)
+        {
+            if (voice.sources.ElementAt(i).Value.volume > 0.1f)
+            {
+                voiceSourcesPlaying++;
+            }
+            if (i == voice.sources.Count - 1)
+            {
+                if (voiceSourcesPlaying > 0) animator.SetBool("IsTalking", true);
+                else animator.SetBool("IsTalking", false);
+            }
+        }
     }
 
     public void StartSpeaking()

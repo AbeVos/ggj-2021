@@ -128,26 +128,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -30733098942867967, guid: b956de9f57d217d4e8c8f1b53bf3771e, type: 3}
   m_PrefabInstance: {fileID: 238533525}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &4929231
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929229}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 45d08bbcc0d36844ca77f6db03f0516e, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 797eb17a5f1b0c74f9fcf3f3b92a73ff, type: 2}
-  - {fileID: 7400000, guid: d9ee9390d1951d140953d95e65ab1a26, type: 2}
-  - {fileID: 7400000, guid: ba23903663e0e2a49a6272d82a3642b0, type: 2}
-  - {fileID: 7400000, guid: 2f4497c119c1965438d9976a94fe5b4b, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!95 &4929232
+--- !u!95 &4929231
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -156,7 +137,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4929229}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: b956de9f57d217d4e8c8f1b53bf3771e, type: 3}
   m_Controller: {fileID: 9100000, guid: 4c635694b266b514e9589b1fad5961e1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -413,30 +394,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4dd4d1235cc9d54f85e01d959d25055, type: 3}
   m_PrefabInstance: {fileID: 419611825}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &608080935 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b956de9f57d217d4e8c8f1b53bf3771e, type: 3}
-  m_PrefabInstance: {fileID: 238533525}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &608080936
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608080935}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c635694b266b514e9589b1fad5961e1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &615560553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1853,6 +1810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 1312051695}
+  animator: {fileID: 0}
   emote_event:
     m_PersistentCalls:
       m_Calls: []
