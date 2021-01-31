@@ -8,7 +8,6 @@ public enum Emotion
 {
     Happy,
     Neutral,
-    Awkward,
     Sad,
 };
 
@@ -44,6 +43,19 @@ public class Person : MonoBehaviour
         }
     }
 
+    private Emotion _current_emotion = Emotion.Neutral;
+    public Emotion CurrentEmotion
+    {
+        get
+        {
+            return _current_emotion;
+        }
+        set
+        {
+            _current_emotion = value;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,34 +85,35 @@ public class Person : MonoBehaviour
         if (Input.GetKeyDown("up")) Mood += 1;
     }
 
-    public void StartSpeaking(Emotion emotion)
+    public void StartSpeaking()
     {
         StopSpeaking();
-        switch (emotion)
+        switch (_current_emotion)
         {
             case Emotion.Happy:
-                voice.StartFadeVolume("happy", 1f, 0.2f);
+                voice.StartFadeVolume("happy", 1f, voice.fading_time);
                 break;
             case Emotion.Neutral:
-                voice.StartFadeVolume("neutral", 1f, 0.2f);
+                voice.StartFadeVolume("neutral", 1f, voice.fading_time);
                 break;
             default:
-                voice.StartFadeVolume("sad", 1f, 0.2f);
+                voice.StartFadeVolume("sad", 1f, voice.fading_time);
                 break;
         }
     }
 
     public void StopSpeaking()
     {
-        voice.StartFadeVolume("happy", 0f, 0.2f);
-        voice.StartFadeVolume("neutral", 0f, 0.2f);
-        voice.StartFadeVolume("sad", 0f, 0.2f);
+        voice.StopAllCoroutines();
+        voice.StartFadeVolume("happy", 0f, voice.fading_time);
+        voice.StartFadeVolume("neutral", 0f, voice.fading_time);
+        voice.StartFadeVolume("sad", 0f, voice.fading_time);
     }
 
     public void ChangeEmotion(Emotion emotion)
     {
         Debug.Log("I feel " + emotion as string);
-        StartSpeaking(Emotion.Sad);
+        // StartSpeaking(Emotion.Sad);
     }
 
     public void ChangeMood(int score)
