@@ -54,6 +54,8 @@ public class AudioSet : MonoBehaviour
             t += Time.deltaTime / duration;
             yield return null;
         }
+
+        source.volume = to;
     }
 
     private AudioSource InitAudioLoop(AudioClip clip)
