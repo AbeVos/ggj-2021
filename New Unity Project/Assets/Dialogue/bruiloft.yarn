@@ -5,10 +5,14 @@ tags:
 <<change_mood Who 1>>
 <<set $emotion to "happy">>
 ...: Look who it is!
-Internal: Wait! Do I know them?
+<<set $emotion to "neutral">>
+Internal: <i>Wait! Do I know them?</i>
+<<set $emotion to "happy">>
 ...: {$player_name}!
 ...: I haven't seen you in ages!
-Internal: Oh no! I forgot their name!
+<<set $emotion to "neutral">>
+Internal: <i>Oh no! I forgot their name!</i>
+<<set $emotion to "happy">>
 
 -> Hi... you!
 	...: It's been too long!
@@ -27,9 +31,10 @@ tags:
 ---
 <<set $emotion to "neutral">>
 ...: When was the last time we spoke?
-Internal: I need to figure out their name.
-Internal: Or else this will become really awkward.
+Internal: <i>I need to figure out their name.<i>
+Internal: <i>Or else this will become really awkward.<i>
 ...: It must have been at that {$tag_wedding} some two years ago. You remember that, don't you?
+Internal: <i>A wedding, you say? Maybe I can find more about it on my phone!</i>
 ...: That was some idea. Planning an outdoor {$tag_wedding} in the dead of winter. At least the reception was nice.
 ...: Even despite the bride's best friend performing with their Ska band. Wasn't a great fan of that.
 ...: Also, I was not sold on the {$tag_cake}. It had a very strange taste to it.
@@ -48,16 +53,16 @@ Internal: Or else this will become really awkward.
 	...: ...
 	...: I'm not quite sure we are talking about the same wedding.
 	...: It was Adela and Billie's wedding!
-	Internal: Of course...
-	...: Don't worry, it happens to the best of us.
+	Internal: <i>Of course...<i>
+	...: Don't worry, happens to the best of us.
 -> Of course I do! That was quite a... wedding wasn't it?
 	<<change_mood Who 0>>
 	<<set $emotion to "neutral">>
 	...: Yeah...
 	...: I guess it was.
 
-Internal: That was a close one.
-Internal: Now, what was their name again?
+Internal: <i>That was a close one.<i>
+Internal: <i>Now, what was their name again?<i>
 [[concert]]
 ===
 
@@ -99,7 +104,7 @@ tags:
 	<<set $emotion to "sad">>
 	...: I guess you weren't there after all...
 	...: That's fine.
--> Very clever how you used your INSTRUMENT to play Ska.
+-> Very clever how you used your jawharp to play Ska.
 	<<change_mood Who -2>>
 	...: That's not right at all!
 	<<set $emotion to "sad">>
@@ -118,15 +123,14 @@ tags:
 <<set $emotion to "sad">>
 ...: It came so unexpectedly.
 ...: One moment you're going about your day, next you wake up in a hospital.
-...: It sure wasn't great walking around with that {$tag_cast}.
+...: It sure wasn't great walking around with that {$tag_cast} for months.
 <<set $emotion to "happy">>
 ...: But everyone wanted to sign it, so at least that was fun.
 <<set $emotion to "neutral">>
 
 <<if $mood >= 0>>
 	<<set $emotion to "neutral">>
-	...: You remember that day...
-	...: Right?
+	...: You remember that day... Right?
 <<endif>>
 <<if $mood < 0>>
 	<<set $emotion to "sad">>
@@ -142,11 +146,11 @@ tags:
 -> If I recall correctly, you broke your leg on that broken escalator.
 	<<change_mood Who -3>>
 	<<set $emotion to "sad">>
-	...: What are you talking about?
+	...: What are you even talking about?
 	...: You hit me with your car and broke my arm!
 	...: You seriously do not remember?!
--> I remember. The car crash, when you broke your arm.
-	<<change_mood Who 3>>
+-> I remember that. The car crash, when you broke your arm.
+	<<change_mood Who 2>>
 	<<set $emotion to "neutral">>
 	...: That's the one.
 	...: Of course, you could hardly forget.
@@ -159,10 +163,12 @@ tags:
 	...: No!
 	...: You hit me with your car!
 
-<<if $mood >= 5>>
+<<if $mood >= 6>>
+	<<set $emotion to "happy">>
+	...: But accidents can happen and in the end our friendship came out stronger than ever!
 	[[happy_ending]]
 <<endif>>
-<<if $mood >= 1 and $mood < 5>>
+<<if $mood >= 1 and $mood < 6>>
 	[[I'm really sorry about that, Kim.|wrong_name]]
 	[[I'm really sorry about that, Lindsay.|wrong_name]]
 	[[I'm really sorry about that, Max.|correct_name]]
@@ -188,7 +194,7 @@ title: correct_name
 tags:
 ---
 <<set $emotion to "happy">>
-Max: For a moment I thought that you had forgotten my name.
+Max: For a moment there I thought that you had forgotten my name.
 Max: But you would never do something like that!
 [[happy_ending]]
 ===
