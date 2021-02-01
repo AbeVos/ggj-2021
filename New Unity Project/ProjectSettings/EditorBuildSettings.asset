@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 65f3e1f8abd5fca41bee2c5fa218fd88
   - enabled: 1
-    path: Assets/Scenes/Dialogue.unity
-    guid: 1c32ce7e326021e698e5942d453492de
+    path: Assets/Scenes/MergedScene.unity
+    guid: 9cf8769610ff69d4cb52eb98e99f5acc
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 7997f7cad8b20144fa8484448bb9fc1d
