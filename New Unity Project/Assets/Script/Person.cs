@@ -124,14 +124,14 @@ public class Person : MonoBehaviour
         int int_value = int.Parse(value);
         Mood += int_value;
 
-        if (Mood <= -3)
+        if (Mood <= -1)
         {
             music.StartFadeVolume("music_happy", 0f, 1f);
             music.StartFadeVolume("music_sad", 1f, 1f);
 
             animator.SetTrigger("sad");
         }
-        else if (Mood < 0)
+        else if (Mood < 1)
         {
             music.StartFadeVolume("music_happy", 0f, 1f);
             music.StartFadeVolume("music_sad", 0f, 1f);
