@@ -9,14 +9,14 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
     private Camera pCamera;
     private SocialMedia socialMedia;
     private TextMeshProUGUI headerText;
-    private GameObject backButton;
+    private GameObject headerButton;
 
     protected void Awake()
     {
         pCamera = Camera.main;
         socialMedia = GameObject.Find("Content").GetComponent<SocialMedia>();
         headerText = GameObject.Find("HeaderText").GetComponent<TextMeshProUGUI>();
-        backButton = GameObject.Find("BackButton");
+        headerButton = GameObject.Find("HeaderButton");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -34,6 +34,6 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
     {
         socialMedia.Filter = filter;
         headerText.text = filter;
-        backButton.GetComponent<Image>().enabled = true;
+        headerButton.GetComponent<Image>().enabled = true;
     }
 }
