@@ -5,12 +5,12 @@ tags:
 <<change_mood Who 1>>
 <<set $emotion to "happy">>
 ...: Look who it is!
-<<set $emotion to "neutral">>
+<<set $emotion to "silent">>
 Internal: <i>Wait! Do I know them?</i>
 <<set $emotion to "happy">>
 ...: {$player_name}!
 ...: I haven't seen you in ages!
-<<set $emotion to "neutral">>
+<<set $emotion to "silent">>
 Internal: <i>Oh no! I forgot their name!</i>
 <<set $emotion to "happy">>
 
@@ -31,10 +31,14 @@ tags:
 ---
 <<set $emotion to "neutral">>
 ...: When was the last time we spoke?
+<<set $emotion to "silent">>
 Internal: <i>I need to figure out their name.<i>
 Internal: <i>Or else this will become really awkward.<i>
+<<set $emotion to "neutral">>
 ...: It must have been at that {$tag_wedding} some two years ago. You remember that, don't you?
+<<set $emotion to "silent">>
 Internal: <i>A wedding, you say? Maybe I can find more about it on my phone!</i>
+<<set $emotion to "neutral">>
 ...: That was some idea. Planning an outdoor {$tag_wedding} in the dead of winter. At least the reception was nice.
 ...: Even despite the bride's best friend performing with their Ska band. Wasn't a great fan of that.
 ...: Also, I was not sold on the {$tag_cake}. It had a very strange taste to it.
@@ -53,7 +57,9 @@ Internal: <i>A wedding, you say? Maybe I can find more about it on my phone!</i>
 	...: ...
 	...: I'm not quite sure we are talking about the same wedding.
 	...: It was Adela and Billie's wedding!
+	<<set $emotion to "silent">>
 	Internal: <i>Of course...<i>
+	<<set $emotion to "neutral">>
 	...: Don't worry, happens to the best of us.
 -> Of course I do! That was quite a... wedding wasn't it?
 	<<change_mood Who 0>>
@@ -61,8 +67,10 @@ Internal: <i>A wedding, you say? Maybe I can find more about it on my phone!</i>
 	...: Yeah...
 	...: I guess it was.
 
+<<set $emotion to "silent">>
 Internal: <i>That was a close one.<i>
 Internal: <i>Now, what was their name again?<i>
+<<set $emotion to "neutral">>
 [[concert]]
 ===
 
@@ -104,7 +112,7 @@ tags:
 	<<set $emotion to "sad">>
 	...: I guess you weren't there after all...
 	...: That's fine.
--> Very clever how you used your jawharp to play Ska.
+-> Very clever how you used your jawharp to play jazz.
 	<<change_mood Who -2>>
 	...: That's not right at all!
 	<<set $emotion to "sad">>

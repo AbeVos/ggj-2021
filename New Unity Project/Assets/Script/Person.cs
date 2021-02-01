@@ -43,7 +43,7 @@ public class Person : MonoBehaviour
         }
         set
         {
-            emote_event.Invoke(value);
+            if (value != "silent") emote_event.Invoke(value);
             _current_emotion = value;
         }
     }

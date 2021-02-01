@@ -3,21 +3,21 @@
 		{
 			"date": "12 December 2018",
 			"author": "Finley",
-			"text": "I just had the loveliest cake at Davy and Elliott's wedding reception",
+			"text": "I just had the loveliest #cake at Davy and Elliott's #wedding reception",
 			"tags": ["wedding", "cake"],
 			"replies": []
 		},
 		{
 			"date": "21 June 2018",
 			"author": "Gab",
-			"text": "It's hot as balls at this wedding! Whose idea was it to do a ceremony in a poorly ventilated room in the middle of June!",
+			"text": "It's hot as balls at this #wedding! Whose idea was it to do a ceremony in a poorly ventilated room in the middle of June!",
 			"tags": ["wedding"],
 			"replies": []
 		},
 		{
 			"date": "2 June 2018",
 			"author": "Kim",
-			"text": "In next week's concert, I'll be performing some Beethoven on my kazoo. Everyone is invited!",
+			"text": "In next week's #concert, I'll be performing some Beethoven on my kazoo. Everyone is invited!",
 			"tags": ["concert"],
 			"replies": [
 				{
@@ -30,7 +30,7 @@
 		{
 			"date": "18 March 2018",
 			"author": "Indigo",
-			"text": "Extended due to success! Jaden and I will perform for the third evening in a row at Ramsey's Pianobar! Come and listen to the sweet tones of Jaden's trombone and my jawharp for an evening full of jazz!",
+			"text": "Extended due to success! Jaden and I will perform for the third evening in a row at Ramsey's Pianobar! Come and listen to the sweet tones of Jaden's trombone and my jawharp for an evening #concert full of jazz!",
 			"tags": ["concert"],
 			"replies": [
 			]
@@ -38,7 +38,7 @@
 		{
 			"date": "15 March 2018",
 			"author": "Harley",
-			"text": "As much as I want to hear how someone plays a trombone with a single arm, I really want to hear Charlie play! Shame, if it hadn't been a Beethoven concert, I would've been there.",
+			"text": "As much as I want to hear how someone plays a trombone with a single arm, I really want to hear Charlie play! Shame, if it hadn't been a Beethoven #concert, I would've been there.",
 			"tags": ["concert"],
 			"replies": [
 				{
@@ -51,15 +51,15 @@
 		{
 			"date": "15 March 2018",
 			"author": "Elliott",
-			"text": "Finley and I promised a friend to attend their Beethoven concert, but I can't stand that. Give me Ska any day!",
-			"tags": ["concert"],
+			"text": "Finley and I promised a friend to attend their Beethoven #concert, but I can't stand that. Give me #Ska any day!",
+			"tags": ["concert", "Ska"],
 			"replies": [
 			]
 		},
 		{
 			"date": "14 March 2018",
 			"author": "Davy",
-			"text": "There's no way I'll spend a whole evening listening to someone playing a jawharp! That'll be some concert!",
+			"text": "There's no way I'll spend a whole evening listening to someone playing a jawharp! That'll be some #concert!",
 			"tags": ["concert"],
 			"replies": [
 			]
@@ -67,20 +67,20 @@
 		{
 			"date": "21 February 2018",
 			"author": "Lindsay",
-			"text": "New! A trombone that you can play with just one hand! Great for concerts!",
+			"text": "New! A trombone that you can play with just one hand! Great for a #concert!",
 			"tags": ["concert", "sponsored content"],
 			"replies": [
 				{
 					"date": "21 February 2018",
 					"author": "Elliott",
-					"text": "I know someone that bought one of those for their concert next month!"
+					"text": "I know someone that bought one of those for their #concert next month!"
 				}
 			]
 		},
 		{
 			"date": "17 February 2018",
 			"author": "Charlie",
-			"text": "Our big concert will be next month! Don't miss it!",
+			"text": "Our big #concert will be next month! Don't miss it!",
 			"tags": ["concert"],
 			"replies": [
 				{
@@ -98,7 +98,7 @@
 		{
 			"date": "16 January 2018",
 			"author": "Davy",
-			"text": "Just got home from Billie and Adela's wedding. Great party, but the cake was awful.",
+			"text": "Just got home from Billie and Adela's #wedding. Great party, but the #cake was awful.",
 			"tags": ["wedding", "cake"],
 			"replies": [
 				{
@@ -111,15 +111,15 @@
 		{
 			"date": "15 January 2018",
 			"author": "Charlie",
-			"text": "At Adela's reception. I think I just knocked over a full glass of beer over the wedding cake! Hoping no one saw...",
+			"text": "At Adela's reception. I think I just knocked over a full glass of beer over the #wedding #cake! Hoping no one saw...",
 			"tags": ["wedding", "cake"],
 			"replies": []
 		},
 		{
 			"date": "15 January 2018",
 			"author": "Charlie",
-			"text": "My best friend Adela and Billie had such a beautiful ceremony, but we are all freezing out here so it's time for me to play some tunes and dance the night away to some Ska.",
-			"tags": ["wedding"],
+			"text": "My best friend Adela and Billie had such a beautiful #wedding ceremony, but we are all freezing out here so it's time for me to play some tunes and dance the night away to some #Ska.",
+			"tags": ["wedding", "Ska"],
 			"replies": [
 				{
 					"date": "16 January 2018",
@@ -134,9 +134,22 @@
 			]
 		},
 		{
+			"date": "2 November 2017",
+			"author": "Indigo",
+			"text": "Tomorrow is my #birthday! Come and have some #cake!",
+			"tags": ["birthday", "cake"],
+			"replies": [
+				{
+					"date": "3 November 2017",
+					"author": "Jaden",
+					"text": "Congratulations, friend!"
+				}
+			]
+		},
+		{
 			"date": "15 September 2017",
 			"author": "Nikita",
-			"text": "Forgot to put the handbrake on. It rolled right over me when I got something from the trunk. Broke my arm and the tree in my front yard has kicked the bucket.",
+			"text": "Had a bit of an #accident today. Forgot to put the handbrake on. It rolled right over me when I got something from the trunk. Broke my arm and the tree in my front yard has kicked the bucket.",
 			"tags": ["accident"],
 			"replies": [
 				{
@@ -154,7 +167,7 @@
 		{
 			"date": "13 August 2017",
 			"author": "Max",
-			"text": "I can't stand this cast. How can I practice playing my trombone now?",
+			"text": "I can't stand this #cast. How can I practice playing my trombone now?",
 			"tags": ["cast"],
 			"replies": [
 			]
@@ -162,7 +175,7 @@
 		{
 			"date": "29 May 2017",
 			"author": "Adela",
-			"text": "I just saw Max getting hit by his best friend's car. He is in the hospital now and seems to be doing fine, but it will be some time before he can use that arm again.",
+			"text": "I just saw Max getting hit by his best friend's car. He is in the hospital now and seems to be doing fine, but it will be some time before he can use that arm again. What a terrible #accident!",
 			"tags": ["accident"],
 			"replies": [
 				{
@@ -175,8 +188,8 @@
 		{
 			"date": "8 August 2017",
 			"author": "Finley",
-			"text": "Kim and I where on the escalator when it broke yesterday! Now we're both in the hospital. Kim broke his leg and my arm is in casts.",
-			"tags": ["accident", "cast"],
+			"text": "Kim and I where on the #escalator when it broke yesterday! Quite an #accident! Now we're both in the hospital. Kim broke his leg and my arm is in a #cast.",
+			"tags": ["accident", "cast", "escalator"],
 			"replies": [
 				{
 					"date": "8 August 2017",
