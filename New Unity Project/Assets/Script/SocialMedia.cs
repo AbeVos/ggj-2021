@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
@@ -33,19 +32,16 @@ public class SocialMedia : MonoBehaviour
     public GameObject PostPrefab;
     public GameObject ReplyPrefab;
     private List<string> _tags;
-    private InputField _inputField;
-    private string _filter;
+    public string Filter;
 
     void Start()
     {
-        _inputField = gameObject.GetComponentInChildren<InputField>();
         TextAsset posts_json = Resources.Load<TextAsset>("posts");
         PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
         _tags = container.posts.SelectMany(x => x.tags).ToList();
 
-        var orderedPosts = container.posts.OrderByDescending(x => x.date).ToList();
-        foreach (Post post in orderedPosts)
+        foreach (Post post in container.posts)
         {
             InstantiatePost(post);
         }
@@ -53,19 +49,14 @@ public class SocialMedia : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            FilterPosts();
-        }
+        FilterPosts();
     }
 
     private void FilterPosts()
     {
-        _filter = _inputField.text;
-
         foreach (Transform child in transform)
         {
-            if (_filter == string.Empty)
+            if (Filter == string.Empty)
             {
                 child.gameObject.SetActive(true);
             }
@@ -74,7 +65,7 @@ public class SocialMedia : MonoBehaviour
                 var postItem = child.GetComponent<PostItem>();
                 if (postItem != null)
                 {
-                    var shouldShow = postItem.Tags.Contains(_filter);
+                    var shouldShow = postItem.Tags.Contains(Filter);
                     child.gameObject.SetActive(shouldShow);
                 }
             }
@@ -83,17 +74,17 @@ public class SocialMedia : MonoBehaviour
 
     private void InstantiatePost(Post post)
     {
-        var postItem = PostPrefab.GetComponent<PostItem>();
-        var authorField = PostPrefab.GetComponent<PostItem>().AuthorField;
-        var bodyField = PostPrefab.GetComponent<PostItem>().BodyField;
-
-        authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
-
-        var bodyText = ReplaceTagsForLinks(post.text, postItem);
-        bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
-
         var prefab = Instantiate(PostPrefab, gameObject.transform);
         prefab.transform.SetParent(gameObject.transform, false);
+
+        var postItem = prefab.GetComponent<PostItem>();
+        var authorField = postItem.AuthorField;
+        var bodyField = postItem.BodyField;
+
+        var bodyText = ReplaceTagsForLinks(post.text, postItem);
+
+        authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
+        bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
 
         foreach (var reply in post.replies)
         {
