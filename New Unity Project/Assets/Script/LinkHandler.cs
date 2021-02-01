@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
@@ -7,11 +8,15 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
 {
     private Camera pCamera;
     private SocialMedia socialMedia;
+    private TextMeshProUGUI headerText;
+    private GameObject backButton;
 
     protected void Awake()
     {
         pCamera = Camera.main;
         socialMedia = GameObject.Find("Content").GetComponent<SocialMedia>();
+        headerText = GameObject.Find("HeaderText").GetComponent<TextMeshProUGUI>();
+        backButton = GameObject.Find("BackButton");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -21,7 +26,14 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
         if (linkIndex != -1)
         {
             TMP_LinkInfo linkInfo = pTextMeshPro.textInfo.linkInfo[linkIndex];
-            socialMedia.Filter = linkInfo.GetLinkText();
+            ApplyFilter(linkInfo.GetLinkText());
         }
+    }
+
+    public void ApplyFilter(string filter)
+    {
+        socialMedia.Filter = filter;
+        headerText.text = filter;
+        backButton.GetComponent<Image>().enabled = true;
     }
 }

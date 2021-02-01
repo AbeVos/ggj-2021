@@ -32,12 +32,10 @@ public class SocialMedia : MonoBehaviour
     public GameObject PostPrefab;
     public GameObject ReplyPrefab;
     private List<string> _tags;
-    private TMP_InputField _inputField;
     public string Filter;
 
     void Start()
     {
-        _inputField = GameObject.Find("InputField").GetComponent<TMP_InputField>();
         TextAsset posts_json = Resources.Load<TextAsset>("posts");
         PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
@@ -53,7 +51,6 @@ public class SocialMedia : MonoBehaviour
     private void Update()
     {
         FilterPosts();
-
     }
 
     private void FilterPosts()
