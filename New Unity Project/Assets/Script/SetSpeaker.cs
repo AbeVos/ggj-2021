@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using Yarn.Unity;
 
-public class SetSpeaker : MonoBehaviour
+namespace Script
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SetSpeaker : MonoBehaviour
     {
+        // Drag and drop your Dialogue Runner into this variable.
+        public DialogueRunner dialogueRunner;
         
-    }
+        public TextMeshProUGUI text;
 
-    // Update is called once per frame
-    void Update()
-    {
+        public void Awake() 
+        {
+            dialogueRunner.AddCommandHandler("speaker_name", ShowSpeakerName);
+        }
         
+        private void ShowSpeakerName(string[] parameters)
+        {
+            text.text = parameters[0];
+        }
     }
 }

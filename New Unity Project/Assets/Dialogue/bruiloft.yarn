@@ -3,73 +3,89 @@ tags:
 ---
 <<set $emotion to "neutral">>
 <<change_mood Who 1>>
+<<speaker_name ...>>
 <<set $emotion to "happy">>
-...: Look who it is!
+Look who it is!
 <<set $emotion to "silent">>
-Internal: <i>Wait! Do I know them?</i>
+
+<<speaker_name Quinn>>
+<i>Wait! Do I know them?</i>
+<<speaker_name ...>>
 <<set $emotion to "happy">>
-...: {$player_name}!
-...: I haven't seen you in ages!
+{$player_name}!
+I haven't seen you in ages!
 <<set $emotion to "silent">>
-Internal: <i>Oh no! I forgot their name!</i>
+<<speaker_name Quinn>>
+<i>Oh no! I forgot their name!</i>
 <<set $emotion to "happy">>
 
 -> Hi... you!
-	...: It's been too long!
+    <<speaker_name ...>>
+	It's been too long!
 -> Who are you again?
-	...: You always where a joker, {$player_name}!
-	...: Surely, you remember me!
+    <<speaker_name ...>>
+	You always where a joker, {$player_name}!
+	Surely, you remember me!
 -> Hey... old friend!
-	...: It's so good to see you after all this time!
+    <<speaker_name ...>>
+	It's so good to see you after all this time!
 -> *Just smile and wave*
-	...: What are the odds of running into you here?
+    <<speaker_name ...>>
+	What are the odds of running into you here?
 [[wedding]]
 ===
 
 title: wedding
 tags:
 ---
+<<speaker_name ...>>
 <<set $emotion to "neutral">>
-...: When was the last time we spoke?
+When was the last time we spoke?
 <<set $emotion to "silent">>
-Internal: <i>I need to figure out their name.<i>
-Internal: <i>Or else this will become really awkward.<i>
+<<speaker_name Quinn>>
+<i>I need to figure out their name.<i>
+<i>Or else this will become really awkward.<i>
 <<set $emotion to "neutral">>
-...: It must have been at that {$tag_wedding} some two years ago. You remember that, don't you?
+It must have been at that {$tag_wedding} some two years ago. You remember that, don't you?
 <<set $emotion to "silent">>
-Internal: <i>A wedding, you say? Maybe I can find more about it on my phone!</i>
+<<speaker_name Quinn>>
+<i>A wedding, you say? Maybe I can find more about it on my phone!</i>
 <<set $emotion to "neutral">>
-...: That was some idea. Planning an outdoor {$tag_wedding} in the dead of winter. At least the reception was nice.
-...: Even despite the bride's best friend performing with their Ska band. Wasn't a great fan of that.
-...: Also, I was not sold on the {$tag_cake}. It had a very strange taste to it.
+<<speaker_name ...>>
+That was some idea. Planning an outdoor {$tag_wedding} in the dead of winter. At least the reception was nice.
+Even despite the bride's best friend performing with their Ska band. Wasn't a great fan of that.
+Also, I was not sold on the {$tag_cake}. It had a very strange taste to it.
 <<set $emotion to "sad">>
-...: Like it had been drenched into something. Very strange...
+Like it had been drenched into something. Very strange...
 <<set $emotion to "neutral">>
-...: Anyway, surely you remember that day?
+Anyway, surely you remember that day?
 
 -> Sure I do, Adela and Billie looked so happy that night!
 	<<change_mood Who 1>>
 	<<set $emotion to "happy">>
-	...: So you DO remember!
+	So you DO remember!
 -> Sure I do, Davy and Elliott looked so happy together!
 	<<change_mood Who -1>>
 	<<set $emotion to "sad">>
-	...: ...
-	...: I'm not quite sure we are talking about the same wedding.
-	...: It was Adela and Billie's wedding!
+	...
+	I'm not quite sure we are talking about the same wedding.
+	It was Adela and Billie's wedding!
 	<<set $emotion to "silent">>
-	Internal: <i>Of course...<i>
+    <<speaker_name Quinn>>
+	<i>Of course...<i>
 	<<set $emotion to "neutral">>
-	...: Don't worry, happens to the best of us.
+    <<speaker_name ...>>
+	Don't worry, happens to the best of us.
 -> Of course I do! That was quite a... wedding wasn't it?
 	<<change_mood Who 0>>
 	<<set $emotion to "neutral">>
-	...: Yeah...
-	...: I guess it was.
+	Yeah...
+	I guess it was.
 
 <<set $emotion to "silent">>
-Internal: <i>That was a close one.<i>
-Internal: <i>Now, what was their name again?<i>
+<<speaker_name Quinn>>
+<i>That was a close one.<i>
+<i>Now, what was their name again?<i>
 <<set $emotion to "neutral">>
 [[concert]]
 ===
@@ -77,47 +93,48 @@ Internal: <i>Now, what was their name again?<i>
 title: concert
 tags:
 ---
+<<speaker_name ...>>
 <<set $emotion to "neutral">>
-...: Anyway...
-...: Didn't that happen in the same year as my first {$tag_concert}?
-...: Well, not really my first of course.
+Anyway...
+Didn't that happen in the same year as my first {$tag_concert}?
+Well, not really my first of course.
 <<set $emotion to "sad">>
-...: But it was the first since after the {$tag_accident}.
+But it was the first since after the {$tag_accident}.
 <<set $emotion to "neutral">>
-...: I was pretty anxious about it. It wasn't easy, given the situation with my arm.
+I was pretty anxious about it. It wasn't easy, given the situation with my arm.
 <<set $emotion to "sad">>
-...: Of course, it didn't help my self-confidence that no one else showed up.
+Of course, it didn't help my self-confidence that no one else showed up.
 <<set $emotion to "neutral">>
-...: It happens, I suppose. What can you do, right?
+It happens, I suppose. What can you do, right?
 <<set $emotion to "happy">>
-...: It didn't really matter anyway. After all you where there, weren't you?
+It didn't really matter anyway. After all you where there, weren't you?
 
 -> Absolutely! You where... Making music... And it was great!
 	<<change_mood Who -1>>
 	<<set $emotion to "sad">>
-	...: Yeah...
+	Yeah...
 	<<set $emotion to "neutral">>
-	...: It was great.
+	It was great.
 -> Yes, you where great playing your trombone. A beautiful rendition of Beethoven.
 	<<change_mood Who +2>>
 	<<set $emotion to "happy">>
-	...: Yes!
-	...: That was a great time. It really meant a lot to me for you to be there.
-	...: After everything that happened between us.
+	Yes!
+	That was a great time. It really meant a lot to me for you to be there.
+	After everything that happened between us.
 -> Playing Ska on your trombone was a masterful stroke!
 	<<change_mood Who -1>>
 	<<set $emotion to "neutral">>
-	...: What?
-	...: I don't even like Ska!
+	What?
+	I don't even like Ska!
 	<<set $emotion to "sad">>
-	...: I guess you weren't there after all...
-	...: That's fine.
+	I guess you weren't there after all...
+	That's fine.
 -> Very clever how you used your jawharp to play jazz.
 	<<change_mood Who -2>>
-	...: That's not right at all!
+	That's not right at all!
 	<<set $emotion to "sad">>
-	...: I guess you weren't there after all...
-	...: That's okay.
+	I guess you weren't there after all...
+	That's okay.
 
 [[accident]]
 ===
@@ -125,55 +142,56 @@ tags:
 title: accident
 tags:
 ---
-...: I guess we haven't been seeing much of each other after that.
-...: Of course, it has been a difficult time for all of us after the {$tag_accident}.
-...: Can you believe it has been three years already?
+<<speaker_name ...>>
+I guess we haven't been seeing much of each other after that.
+Of course, it has been a difficult time for all of us after the {$tag_accident}.
+Can you believe it has been three years already?
 <<set $emotion to "sad">>
-...: It came so unexpectedly.
-...: One moment you're going about your day, next you wake up in a hospital.
-...: It sure wasn't great walking around with that {$tag_cast} for months.
+It came so unexpectedly.
+One moment you're going about your day, next you wake up in a hospital.
+It sure wasn't great walking around with that {$tag_cast} for months.
 <<set $emotion to "happy">>
-...: But everyone wanted to sign it, so at least that was fun.
+But everyone wanted to sign it, so at least that was fun.
 <<set $emotion to "neutral">>
 
 <<if $mood >= 0>>
 	<<set $emotion to "neutral">>
-	...: You remember that day... Right?
+	You remember that day... Right?
 <<endif>>
 <<if $mood < 0>>
 	<<set $emotion to "sad">>
-	...: But I don't suppose you remember that either, do you?
+	But I don't suppose you remember that either, do you?
 <<endif>>
 
 -> I remember, you broke your arm on that faulty escalator.
 	<<change_mood Who -3>>
 	<<set $emotion to "sad">>
-	...: What?
-	...: It wasn't an escalator.
-	...: I broke my arm after you hit me with your car!
+	What?
+	It wasn't an escalator.
+	I broke my arm after you hit me with your car!
 -> If I recall correctly, you broke your leg on that broken escalator.
 	<<change_mood Who -3>>
 	<<set $emotion to "sad">>
-	...: What are you even talking about?
-	...: You hit me with your car and broke my arm!
-	...: You seriously do not remember?!
+	What are you even talking about?
+	You hit me with your car and broke my arm!
+	You seriously do not remember?!
 -> I remember that. The car crash, when you broke your arm.
 	<<change_mood Who 2>>
 	<<set $emotion to "neutral">>
-	...: That's the one.
-	...: Of course, you could hardly forget.
+	That's the one.
+	Of course, you could hardly forget.
 	<<set $emotion to "sad">>
-	...: After all, you where the one driving.
+	After all, you where the one driving.
 -> I recall! You crashed your car and broke your arm.
 	<<change_mood Who -2>>
 	<<set $emotion to "sad">>
-	...: What?
-	...: No!
-	...: You hit me with your car!
+	What?
+	No!
+	You hit me with your car!
 
 <<if $mood >= 6>>
 	<<set $emotion to "happy">>
-	...: But accidents can happen and in the end our friendship came out stronger than ever!
+	But accidents can happen and in the end our friendship came out stronger than ever!
 	[[happy_ending]]
 <<endif>>
 <<if $mood >= 1 and $mood < 6>>
@@ -190,36 +208,40 @@ tags:
 title: wrong_name
 tags:
 ---
+<<speaker_name ...>>
 <<set $emotion to "neutral">>
-...: Excuse me?
+Excuse me?
 <<set $emotion to "sad">>
-...: You don't remember my name?
-...: Well, this is awkward..
+You don't remember my name?
+Well, this is awkward..
 [[sad_ending]]
 ===
 
 title: correct_name
 tags:
 ---
+<<speaker_name Max>>
 <<set $emotion to "happy">>
-Max: For a moment there I thought that you had forgotten my name.
-Max: But you would never do something like that!
+For a moment there I thought that you had forgotten my name.
+But you would never do something like that!
 [[happy_ending]]
 ===
 
 title: happy_ending
 tags:
 ---
+<<speaker_name Max>>
 <<set $emotion to "happy">>
-Max: Anyway, this is my floor.
-Max: It was great seeing you again!
-Max: I'll see you around, {$player_name}!
+Anyway, this is my floor.
+It was great seeing you again!
+I'll see you around, {$player_name}!
 ===
 
 title: sad_ending
 tags:
 ---
+<<speaker_name ...>>
 <<set $emotion to "sad">>
-...: Well I guess we weren't such good friends after all...
-...: I have to go now.
+Well I guess we weren't such good friends after all...
+I have to go now.
 ===
