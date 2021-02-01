@@ -66,8 +66,8 @@ public class Person : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("down")) ChangeMood("-1");
-        if (Input.GetKeyDown("up")) ChangeMood("+1");
+        // if (Input.GetKeyDown("down")) ChangeMood("-1");
+        // if (Input.GetKeyDown("up")) ChangeMood("+1");
     }
 
     public void StartSpeaking()
