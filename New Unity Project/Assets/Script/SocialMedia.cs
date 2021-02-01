@@ -1,31 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using TMPro;
-
-[System.Serializable]
-public class Message
-{
-    public string date;
-    public string author;
-    public string text;
-}
-
-[System.Serializable]
-public class Post
-{
-    public string date;
-    public string author;
-    public string text;
-    public List<string> tags;
-    public Message[] replies;
-}
-
-[System.Serializable]
-public class PostContainer
-{
-    public Post[] posts;
-}
+using Assets.Script.DataObjects;
 
 public class SocialMedia : MonoBehaviour
 {
@@ -39,7 +17,7 @@ public class SocialMedia : MonoBehaviour
         TextAsset posts_json = Resources.Load<TextAsset>("posts");
         PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
-        _tags = container.posts.SelectMany(x => x.tags).ToList();
+        _tags = container.posts.SelectMany(x => x.tags).Distinct().ToList();
 
         foreach (Post post in container.posts)
         {
@@ -94,23 +72,23 @@ public class SocialMedia : MonoBehaviour
 
     private string ReplaceTagsForLinks(string text, PostItem postItem)
     {
-        var punctuation = text.Where(char.IsPunctuation).Distinct().ToArray();
-        var words = text.Split().Select(x => x.Trim(punctuation)).ToList();
-        var output = new List<string>();
-
-        foreach (var word in words)
+        foreach(var tag in _tags)
         {
-            if (_tags.Contains(word))
+            if (text.Contains(tag))
             {
-                postItem.Tags.Add(word);
-                output.Add($"<color=#1E90FF><link={word}>{word}</link></color>"); //todo: decent color implementation
-            }
-            else
-            {
-                output.Add(word);
+                if (text.Contains($"{tag}s"))
+                {
+                    text = text.Replace($"{tag}s", $"<color=#1E90FF><link={tag}>{tag}s</link></color>");
+                }
+                else
+                {
+                    text = text.Replace(tag, $"<color=#1E90FF><link={tag}>{tag}</link></color>");
+                }
+                postItem.Tags.Add(tag);
             }
         }
-        return string.Join(" ", output);
+
+        return text;
     }
 
     private void InstantiateReply(Message reply, GameObject parent)

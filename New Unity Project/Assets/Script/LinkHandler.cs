@@ -26,7 +26,7 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
         if (linkIndex != -1)
         {
             TMP_LinkInfo linkInfo = pTextMeshPro.textInfo.linkInfo[linkIndex];
-            ApplyFilter(linkInfo.GetLinkText());
+            ApplyFilter(linkInfo.GetLinkID());
         }
     }
 
