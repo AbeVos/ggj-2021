@@ -33,7 +33,7 @@ public class SocialMedia : MonoBehaviour
     public GameObject ReplyPrefab;
     private List<string> _tags;
     private TMP_InputField _inputField;
-    private string _filter;
+    public string Filter;
 
     void Start()
     {
@@ -52,19 +52,15 @@ public class SocialMedia : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            FilterPosts();
-        }
+        FilterPosts();
+
     }
 
     private void FilterPosts()
     {
-        _filter = _inputField.text;
-
         foreach (Transform child in transform)
         {
-            if (_filter == string.Empty)
+            if (Filter == string.Empty)
             {
                 child.gameObject.SetActive(true);
             }
@@ -73,7 +69,7 @@ public class SocialMedia : MonoBehaviour
                 var postItem = child.GetComponent<PostItem>();
                 if (postItem != null)
                 {
-                    var shouldShow = postItem.Tags.Contains(_filter);
+                    var shouldShow = postItem.Tags.Contains(Filter);
                     child.gameObject.SetActive(shouldShow);
                 }
             }
