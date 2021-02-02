@@ -17,6 +17,9 @@ namespace Script
         private int _currentLevelIndex = 1;
         private int _lastLevelIndex = 0;
 
+        private Animator elevatorAnimator;
+        private Animator elevatorDoorAnimator;
+
         private static bool _hasLoadedOnce = false;
 
         public GameManager()
@@ -25,6 +28,18 @@ namespace Script
             
             // Ik doe hier de aanname dat You een beetje oke gaat lezen in zinnen
             PlayerName = "You";
+        }
+
+        private void Update()
+        {
+            // ugly testing code
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                elevatorAnimator = GameObject.Find("Elevator").GetComponent<Animator>();
+                elevatorDoorAnimator = GameObject.Find("ElevatorDoors").GetComponent<Animator>();
+                elevatorAnimator.SetTrigger("STAHP");
+                elevatorDoorAnimator.SetTrigger("STAHP");
+            }
         }
 
         private void OnEnable()
@@ -48,18 +63,19 @@ namespace Script
         {
             var lastState = State;
             OnTransition?.Invoke(true);
-
             switch (desiredState)
             {
                 case GameState.GameFailed:
                     Debug.Log("LOSER!");
                     _currentLevelIndex = 3;
                     _lastLevelIndex = 2;
+                    StopElevator();
                     break;
                 case GameState.GameWon:
                     Debug.Log("WINNER!");
                     _currentLevelIndex = 3;
                     _lastLevelIndex = 2;
+                    StopElevator();
                     break;
                 case GameState.Init:
                     ResetGame();
@@ -71,7 +87,6 @@ namespace Script
                 case GameState.GamePlay:
                     _currentLevelIndex = 2;
                     _lastLevelIndex = 1;
-
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(desiredState), desiredState, null);
@@ -98,6 +113,15 @@ namespace Script
         {
             // Scene 3 is de laatste dus gebruiken we een donkere overgang
             AfterTransition?.Invoke(scene.buildIndex != 3);
+        }
+        
+        private void StopElevator()
+        {
+            // should probably do this with events
+            elevatorAnimator = GameObject.Find("Elevator").GetComponent<Animator>();
+            elevatorDoorAnimator = GameObject.Find("ElevatorDoors").GetComponent<Animator>();
+            elevatorAnimator.SetTrigger("STAHP");
+            elevatorDoorAnimator.SetTrigger("STAHP");
         }
     }
 }
