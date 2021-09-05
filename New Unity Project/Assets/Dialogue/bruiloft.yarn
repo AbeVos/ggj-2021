@@ -8,6 +8,10 @@ tags:
 Look who it is!
 <<set $emotion to "silent">>
 
+<<set $emotion to "happy">>
+Also using the lift eh? Going to the top floor?
+<<set $emotion to "silent">>
+
 <<speaker_name Quinn>>
 <i>Wait! Do I know them?</i>
 <<speaker_name ...>>
