@@ -2,76 +2,80 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum MusicState
+namespace Script
 {
-    Full,
-    Base,
-    Silent,
-}
-
-[System.Serializable]
-public class NamedClip
-{
-    public string name;
-    public AudioClip clip;
-}
-
-public class AudioSet : MonoBehaviour
-{
-    public NamedClip[] clips;
-    public float fading_time;
-
-    public Dictionary<string, AudioSource> sources;
-
-    // Start is called before the first frame update
-    void Awake()
+    internal enum MusicState
     {
-        sources = new Dictionary<string, AudioSource>();
-
-        foreach (NamedClip clip in clips)
-        {
-            sources.Add(clip.name, InitAudioLoop(clip.clip));
-        }
+        Full,
+        Base,
+        Silent,
     }
 
-    // Update is called once per frame
-    void Update()
+    [System.Serializable]
+    public class NamedClip
     {
-
+        public string name;
+        public AudioClip clip;
     }
 
-    IEnumerator FadeVolume(string key, float to, float duration)
+    public class AudioSet : MonoBehaviour
     {
-        float t = 0f;
+        public NamedClip[] clips;
+        public float fading_time;
 
-        AudioSource source = sources[key];
-        float start_volume = source.volume;
+        public Dictionary<string, AudioSource> sources;
 
-        while (t <= 1f)
+        // Start is called before the first frame update
+        private void Awake()
         {
-            source.volume = Mathf.Lerp(start_volume, to, t);
+            sources = new Dictionary<string, AudioSource>();
 
-            t += Time.deltaTime / duration;
-            yield return null;
+            foreach (NamedClip clip in clips)
+            {
+                sources.Add(clip.name, InitAudioLoop(clip.clip));
+            }
         }
 
-        source.volume = to;
-    }
+        // Update is called once per frame
+        private void Update()
+        {
 
-    private AudioSource InitAudioLoop(AudioClip clip)
-    {
-        AudioSource source = gameObject.AddComponent<AudioSource>() as AudioSource;
-        source.clip = clip;
-        source.playOnAwake = true;
-        source.loop = true;
-        source.volume = 0f;
-        source.Play();
+        }
 
-        return source;
-    }
+        private IEnumerator FadeVolume(string key, float to, float duration)
+        {
+            var t = 0f;
 
-    public void StartFadeVolume(string key, float to, float duration)
-    {
-        StartCoroutine(FadeVolume(key, to, duration));
+            var source = sources[key];
+            var start_volume = source.volume;
+
+            while (t <= 1f)
+            {
+                source.volume = Mathf.Lerp(start_volume, to, t);
+
+                t += Time.deltaTime / duration;
+                yield return null;
+            }
+
+            source.volume = to;
+        }
+
+        private AudioSource InitAudioLoop(AudioClip clip)
+        {
+            var source = gameObject.AddComponent<AudioSource>();
+        
+            source.clip = clip;
+            source.playOnAwake = true;
+            source.loop = true;
+            source.volume = 0f;
+            source.Play();
+
+            return source;
+        }
+
+        public void StartFadeVolume(string key, float to, float duration)
+        {
+            StartCoroutine(FadeVolume(key, to, duration));
+        }
     }
 }

@@ -1,7 +1,10 @@
-[System.Serializable]
-public class Message
+namespace Script.DataObjects
 {
-    public string date;
-    public string author;
-    public string text;
+    [System.Serializable]
+    public class Message
+    {
+        public string date;
+        public string author;
+        public string text;
+    }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Assets.Script.DataObjects
+namespace Script.DataObjects
 {
     [System.Serializable]
     public class Post
