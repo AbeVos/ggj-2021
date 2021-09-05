@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using Yarn.Unity;
+using YarnSpinner.Runtime;
 
 namespace Script
 {

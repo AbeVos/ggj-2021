@@ -25,9 +25,9 @@ SOFTWARE.
 */
 
 using UnityEngine;
-using System.Collections;
+using YarnSpinner.Runtime;
 
-namespace Yarn.Unity.Example {
+namespace YarnSpinner.Samples.Space.Scripts {
 
     [RequireComponent (typeof (SpriteRenderer))]
     /// Attach SpriteSwitcher to game object

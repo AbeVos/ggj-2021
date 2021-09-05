@@ -24,13 +24,14 @@ SOFTWARE.
 
 */
 
-using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
+using UnityEngine.UI;
+using Yarn;
 
-namespace Yarn.Unity {
+namespace YarnSpinner.Runtime {
     
     /// <summary>
     /// Displays dialogue lines to the player, and sends user choices back
@@ -46,7 +47,7 @@ namespace Yarn.Unity {
     /// to the next line.
     /// </remarks>
     /// <seealso cref="DialogueRunner"/>
-    public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
+    public class DialogueUI : DialogueUIBehaviour
     {
 
         /// <summary>

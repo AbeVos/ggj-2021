@@ -24,16 +24,17 @@ SOFTWARE.
 
 */
 
-using UnityEngine;
-using UnityEngine.Assertions;
-using UnityEngine.Events;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using CsvHelper;
-using System;
+using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.Events;
+using Yarn;
 
-namespace Yarn.Unity
+namespace YarnSpinner.Runtime
 {
 
     /// <summary>

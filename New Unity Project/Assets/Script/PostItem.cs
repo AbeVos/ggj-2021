@@ -1,9 +1,12 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class PostItem : MonoBehaviour
+namespace Script
 {
-    public GameObject AuthorField;
-    public GameObject BodyField;
-    public List<string> Tags;
+    public class PostItem : MonoBehaviour
+    {
+        public GameObject AuthorField;
+        public GameObject BodyField;
+        public List<string> Tags;
+    }
 }

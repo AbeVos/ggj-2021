@@ -1,104 +1,100 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+using Script.DataObjects;
 using TMPro;
-using Assets.Script.DataObjects;
+using UnityEngine;
 
-public class SocialMedia : MonoBehaviour
+namespace Script
 {
-    public GameObject PostPrefab;
-    public GameObject ReplyPrefab;
-    private List<string> _tags;
-    public string Filter;
-
-    void Start()
+    public class SocialMedia : MonoBehaviour
     {
-        TextAsset posts_json = Resources.Load<TextAsset>("posts");
-        PostContainer container = JsonUtility.FromJson<PostContainer>(posts_json.text);
+        public GameObject PostPrefab;
+        public GameObject ReplyPrefab;
+        private List<string> _tags;
+        public string Filter;
 
-        _tags = container.posts.SelectMany(x => x.tags).Distinct().ToList();
-
-        foreach (Post post in container.posts)
+        private void Start()
         {
-            InstantiatePost(post);
-        }
-    }
+            var posts_json = Resources.Load<TextAsset>("posts");
+            var container = JsonUtility.FromJson<PostContainer>(posts_json.text);
 
-    private void Update()
-    {
-        FilterPosts();
-    }
+            _tags = container.posts.SelectMany(x => x.tags).Distinct().ToList();
 
-    private void FilterPosts()
-    {
-        foreach (Transform child in transform)
-        {
-            if (Filter == string.Empty)
+            foreach (Post post in container.posts)
             {
-                child.gameObject.SetActive(true);
-            }
-            else
-            {
-                var postItem = child.GetComponent<PostItem>();
-                if (postItem != null)
-                {
-                    var shouldShow = postItem.Tags.Contains(Filter);
-                    child.gameObject.SetActive(shouldShow);
-                }
+                InstantiatePost(post);
             }
         }
-    }
 
-    private void InstantiatePost(Post post)
-    {
-        var prefab = Instantiate(PostPrefab, gameObject.transform);
-        prefab.transform.SetParent(gameObject.transform, false);
-
-        var postItem = prefab.GetComponent<PostItem>();
-        var authorField = postItem.AuthorField;
-        var bodyField = postItem.BodyField;
-
-        var bodyText = ReplaceTagsForLinks(post.text, postItem);
-
-        authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
-        bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
-
-        foreach (var reply in post.replies)
+        private void Update()
         {
-            InstantiateReply(reply, prefab);
+            FilterPosts();
         }
-    }
 
-    private string ReplaceTagsForLinks(string text, PostItem postItem)
-    {
-        foreach(var tag in _tags)
+        private void FilterPosts()
         {
-            if (text.Contains(tag))
+            foreach (Transform child in transform)
             {
-                if (text.Contains($"{tag}s"))
+                if (Filter == string.Empty)
                 {
-                    text = text.Replace($"{tag}s", $"<color=#1E90FF><link={tag}>{tag}s</link></color>");
+                    child.gameObject.SetActive(true);
                 }
                 else
                 {
-                    text = text.Replace(tag, $"<color=#1E90FF><link={tag}>{tag}</link></color>");
+                    var postItem = child.GetComponent<PostItem>();
+                    if (postItem != null)
+                    {
+                        var shouldShow = postItem.Tags.Contains(Filter);
+                        child.gameObject.SetActive(shouldShow);
+                    }
                 }
-                postItem.Tags.Add(tag);
             }
         }
 
-        return text;
-    }
+        private void InstantiatePost(Post post)
+        {
+            var prefab = Instantiate(PostPrefab, gameObject.transform);
+            prefab.transform.SetParent(gameObject.transform, false);
 
-    private void InstantiateReply(Message reply, GameObject parent)
-    {
-        var authorField = ReplyPrefab.GetComponent<PostItem>().AuthorField;
-        var bodyField = ReplyPrefab.GetComponent<PostItem>().BodyField;
+            var postItem = prefab.GetComponent<PostItem>();
+            var authorField = postItem.AuthorField;
+            var bodyField = postItem.BodyField;
 
-        authorField.GetComponent<TextMeshProUGUI>().text = $"{reply.author} - {reply.date}";
-        bodyField.GetComponent<TextMeshProUGUI>().text = reply.text;
+            var bodyText = ReplaceTagsForLinks(post.text, postItem);
 
-        var prefab = Instantiate(ReplyPrefab, parent.transform);
-        prefab.transform.SetParent(parent.transform);
+            authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
+            bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
+
+            foreach (var reply in post.replies)
+            {
+                InstantiateReply(reply, prefab);
+            }
+        }
+
+        private string ReplaceTagsForLinks(string text, PostItem postItem)
+        {
+            foreach (var tag in _tags.Where(tag => text.Contains(tag)))
+            {
+                text = text.Contains($"{tag}s") 
+                    ? text.Replace($"{tag}s", $"<color=#1E90FF><link={tag}>{tag}s</link></color>") 
+                    : text.Replace(tag, $"<color=#1E90FF><link={tag}>{tag}</link></color>");
+            
+                postItem.Tags.Add(tag);
+            }
+
+            return text;
+        }
+
+        private void InstantiateReply(Message reply, GameObject parent)
+        {
+            var authorField = ReplyPrefab.GetComponent<PostItem>().AuthorField;
+            var bodyField = ReplyPrefab.GetComponent<PostItem>().BodyField;
+
+            authorField.GetComponent<TextMeshProUGUI>().text = $"{reply.author} - {reply.date}";
+            bodyField.GetComponent<TextMeshProUGUI>().text = reply.text;
+
+            var prefab = Instantiate(ReplyPrefab, parent.transform);
+            prefab.transform.SetParent(parent.transform);
+        }
     }
 }
