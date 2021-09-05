@@ -19,7 +19,7 @@ namespace Script
         public void OnClickHandle()
         {
             socialMedia.Filter = string.Empty;
-            headerText.text = string.Empty;
+            headerText.text = "Kwettr";
             GetComponent<Image>().enabled = false;
         }
     }
