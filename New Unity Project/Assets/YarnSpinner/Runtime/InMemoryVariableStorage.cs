@@ -24,12 +24,12 @@ SOFTWARE.
 
 */
 
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Yarn.Unity;
+using UnityEngine;
+using Yarn;
 
-namespace Yarn.Unity {
+namespace YarnSpinner.Runtime {
 
     /// <summary>
     /// An simple implementation of DialogueUnityVariableStorage, which

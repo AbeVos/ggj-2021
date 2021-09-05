@@ -25,9 +25,8 @@ SOFTWARE.
 */
 
 using UnityEngine;
-using System.Collections;
 
-namespace Yarn.Unity.Example {
+namespace YarnSpinner.Samples.Space.Scripts {
 
     /// Control the position of the camera and its behaviour
     /** Camera should have minPosition and maxPosition of the

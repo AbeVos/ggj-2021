@@ -24,11 +24,11 @@ SOFTWARE.
 
 */
 
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using YarnSpinner.Runtime;
 
-namespace Yarn.Unity.Example {
+namespace YarnSpinner.Samples.Space.Scripts {
     public class PlayerCharacter : MonoBehaviour {
 
         public float minPosition = -5.3f;

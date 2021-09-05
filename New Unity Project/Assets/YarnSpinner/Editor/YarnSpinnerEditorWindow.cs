@@ -24,12 +24,14 @@ SOFTWARE.
 
 */
 
-using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
 using UnityEngine.Networking;
+using Yarn;
+using YarnSpinner.Runtime;
 
-namespace Yarn.Unity
+namespace YarnSpinner.Editor
 {
     public class YarnSpinnerEditorWindow : EditorWindow {
 
@@ -465,7 +467,7 @@ namespace Yarn.Unity
 
 
         // Validates a single script.
-        ValidationMessage[] ValidateFile(TextAsset script, Analysis.Context analysisContext, out CheckerResult.State result) {
+        ValidationMessage[] ValidateFile(TextAsset script, Yarn.Analysis.Context analysisContext, out CheckerResult.State result) {
 
             // The list of messages we got from the compiler.
             var messageList = new List<ValidationMessage>();
@@ -554,14 +556,14 @@ namespace Yarn.Unity
             var deprecations = new List<Deprecation>();
 
             deprecations.Add(new Deprecation(
-                typeof(Yarn.Unity.VariableStorageBehaviour),
+                typeof(VariableStorageBehaviour),
                 "SetNumber",
                 "This method is obsolete, and will not be called in future " +
                 "versions of Yarn Spinner. Use SetValue instead."
             ));
 
             deprecations.Add(new Deprecation(
-                typeof(Yarn.Unity.VariableStorageBehaviour),
+                typeof(VariableStorageBehaviour),
                 "GetNumber",
                 "This method is obsolete, and will not be called in future " +
                 "versions of Yarn Spinner. Use GetValue instead."
