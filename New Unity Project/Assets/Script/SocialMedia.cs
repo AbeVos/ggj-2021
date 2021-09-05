@@ -76,8 +76,8 @@ namespace Script
             foreach (var tag in _tags.Where(tag => text.Contains(tag)))
             {
                 text = text.Contains($"{tag}s") 
-                    ? text.Replace($"#{tag}s", $"<color=#00669F><link={tag}>#{tag}s</link></color>") 
-                    : text.Replace($"#{tag}", $"<color=#00669F><link={tag}>#{tag}</link></color>");
+                    ? text.Replace($"#{tag}s", $"<b><color=#9edcff><link={tag}>#{tag}s</link></color></b>") 
+                    : text.Replace($"#{tag}", $"<b><color=#9edcff><link={tag}>#{tag}</link></color></b>");
             
                 postItem.Tags.Add(tag);
             }
