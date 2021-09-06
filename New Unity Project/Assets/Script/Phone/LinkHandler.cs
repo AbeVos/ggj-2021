@@ -11,14 +11,16 @@ namespace Script
         private Camera pCamera;
         private SocialMedia socialMedia;
         private TextMeshProUGUI headerText;
-        private GameObject headerButton;
+        private GameObject backButton;
+        private ScrollRect scrollRect;
 
         protected void Awake()
         {
             pCamera = Camera.main;
             socialMedia = GameObject.Find("Content").GetComponent<SocialMedia>();
             headerText = GameObject.Find("HeaderText").GetComponent<TextMeshProUGUI>();
-            headerButton = GameObject.Find("HeaderButton");
+            backButton = GameObject.Find("BackButton");
+            scrollRect = GameObject.Find("Scroll View").GetComponent<ScrollRect>();
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -36,7 +38,8 @@ namespace Script
         {
             socialMedia.Filter = filter;
             headerText.text = filter;
-            headerButton.GetComponent<Image>().enabled = true;
+            backButton.GetComponent<Image>().enabled = true;
+            scrollRect.verticalNormalizedPosition = 1;
         }
     }
 }

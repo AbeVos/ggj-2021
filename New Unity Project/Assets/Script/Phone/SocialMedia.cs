@@ -58,11 +58,13 @@ namespace Script
 
             var postItem = prefab.GetComponent<PostItem>();
             var authorField = postItem.AuthorField;
+            var dateField = postItem.DateField;
             var bodyField = postItem.BodyField;
 
             var bodyText = ReplaceTagsForLinks(post.text, postItem);
 
-            authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author} - {post.date}");
+            authorField.GetComponent<TextMeshProUGUI>().SetText($"{post.author}");
+            dateField.GetComponent<TextMeshProUGUI>().SetText($"{post.date}");
             bodyField.GetComponent<TextMeshProUGUI>().SetText(bodyText);
 
             foreach (var reply in post.replies)
